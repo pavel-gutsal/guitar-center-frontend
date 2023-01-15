@@ -1,3 +1,3 @@
 export const PATH = {
-  SIGNUP: "auth/signup",
+  SIGNUP: 'auth/signup',
 };
