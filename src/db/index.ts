@@ -17,7 +17,7 @@ export const database = {
       mainPhoto:
         'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
       rating: 4.5,
-      bestSeller: true,
+      bestSeller: false,
       totalPrice: 550,
       discount: 0.2,
       ShortSpecs: [
@@ -37,7 +37,7 @@ export const database = {
       rating: 4.3,
       bestSeller: false,
       totalPrice: 450,
-      discount: 0.1,
+      discount: null,
       ShortSpecs: [
         ['Display', 'Super AMOLED Display'],
         ['Screen Size', '6.5 inch'],
@@ -73,7 +73,7 @@ export const database = {
       rating: 4.5,
       bestSeller: true,
       totalPrice: 550,
-      discount: 0.2,
+      discount: null,
       ShortSpecs: [
         ['Display', 'Super AMOLED Display'],
         ['Screen Size', '6.5 inch'],
@@ -109,7 +109,7 @@ export const database = {
       rating: 4.5,
       bestSeller: true,
       totalPrice: 550,
-      discount: 0.2,
+      discount: null,
       ShortSpecs: [
         ['Display', 'Super AMOLED Display'],
         ['Screen Size', '6.5 inch'],

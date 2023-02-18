@@ -29,10 +29,17 @@ interface Props {
 }
 
 export const Cart = ({ product }: Props) => {
+  const currentPriceHandler = () => {
+    if (product.discount) {
+      return product.totalPrice - product.totalPrice * product.discount;
+    }
+    return product.totalPrice;
+  };
+
   return (
     <SCart>
       <SCartTags>
-        {product.discount && <SBestSellerTag>Best Seller</SBestSellerTag>}
+        {product.bestSeller && <SBestSellerTag>Best Seller</SBestSellerTag>}
         {product.discount && (
           <SDiscountTag>{`-${product.discount * 100}%`}</SDiscountTag>
         )}
@@ -50,10 +57,10 @@ export const Cart = ({ product }: Props) => {
       </SRating>
       <STitle>{nameNormalize(product.model)}</STitle>
       <SPrice>
-        <SPriceCurrent>{`$${
-          product.totalPrice - product.totalPrice * product.discount
-        }`}</SPriceCurrent>
-        <SPriceDiscounted>{`$${product.totalPrice}`}</SPriceDiscounted>
+        <SPriceCurrent>{`$${currentPriceHandler()}`}</SPriceCurrent>
+        {product.discount && (
+          <SPriceDiscounted>{`$${product.totalPrice}`}</SPriceDiscounted>
+        )}
       </SPrice>
       <SButtonContainer>
         <CartButtonBuy />
