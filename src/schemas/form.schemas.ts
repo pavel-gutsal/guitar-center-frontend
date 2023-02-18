@@ -24,3 +24,12 @@ export const SignupFormSchema = yup.object().shape({
     .required('Please confirm password.')
     .oneOf([yup.ref('password')], 'Passwords do not match.'),
 });
+
+export const LoginFormSchema = yup.object().shape({
+  email: yup.string().required('enter email').email('not valid email'),
+
+  password: yup
+    .string()
+    .required('enter password')
+    .min(6, 'password should be at least 6 charackters long'),
+});

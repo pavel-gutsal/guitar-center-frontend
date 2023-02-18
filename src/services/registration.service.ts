@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import { SignupData } from '../types';
+import { SignupData, LoginData } from '../types';
 import { register } from '../api/registration';
 import { PATH } from '../constants';
 
@@ -17,4 +17,20 @@ export const useSignup = () => {
     },
   });
   return { signup, isLoading, isError, error };
+};
+
+export const useLogin = () => {
+  const path = PATH.LOGIN;
+  const {
+    mutate: login,
+    isLoading,
+    isError,
+    error,
+  } = useMutation((loginData: LoginData) => register(path, loginData), {
+    onSuccess: (data) => {
+      localStorage.setItem('user', JSON.stringify(data));
+      // set to redux storage, navigate to another page
+    },
+  });
+  return { login, isLoading, isError, error };
 };

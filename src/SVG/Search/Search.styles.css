@@ -1,0 +1,7 @@
+.search {
+  position: absolute;
+  fill: rgb(138, 138, 138);
+  top: 55%;
+  left: 10px;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,21 @@
+.CartButtonBuy {
+  cursor: pointer;
+  border: 1px solid var(--brightOrange);
+  background: white;
+  color: var(--greyTextUnhighlighted);
+  fill: var(--greyTextUnhighlighted);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.CartButtonBuy:hover,
+.CartButtonBuy:focus {
+  background: var(--brightOrange);
+  color: white;
+  fill: white;
+}

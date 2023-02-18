@@ -10,4 +10,19 @@
   box-sizing: border-box;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 16px;
+  font-weight: 400;
+}
+
+:root {
+  --darkHeader: #231f20;
+  --blueHeighlight: #1787ff;
+  --greyFont: #a6a5a5;
+  --greyTextUnhighlighted: #484848;
+  --brigthRed: #f94144;
+  --pink: #ef476f;
+  --lightPink: #ff4d6d;
+  --darkOrange: #f3722c;
+  --brightOrange: #f8961e;
+  --saladGreen: #90be6d;
+  --successGreen: #43aa8b;
 }

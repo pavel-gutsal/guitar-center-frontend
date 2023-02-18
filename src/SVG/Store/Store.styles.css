@@ -1,0 +1,13 @@
+.store {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #a6a5a5;
+  transition: all 0.3s ease-in-out;
+}
+
+.store:hover,
+.store:focus {
+  fill: #1787ff;
+  cursor: pointer;
+}

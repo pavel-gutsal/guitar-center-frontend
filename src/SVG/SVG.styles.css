@@ -1,0 +1,15 @@
+.svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  fill: #a6a5a5;
+  transition: all 0.3s ease-in-out;
+}
+
+.svg:hover,
+.svg:focus {
+  fill: #1787ff;
+  cursor: pointer;
+}
