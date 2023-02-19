@@ -1,0 +1,21 @@
+.BlockLinkItem {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  fill: var(--greyTextUnhighlighted);
+  color: var(--greyTextUnhighlighted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px;
+  padding-left: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.BlockLinkItem:hover,
+.BlockLinkItem:focus {
+  fill: var(--brightOrange);
+  color: var(--brightOrange);
+}

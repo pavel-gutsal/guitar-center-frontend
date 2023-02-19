@@ -1,6 +1,8 @@
 export const theme = {
   sizes: {
     header: '60px',
+    cardWidthLaptop: '270',
+    blockWidthLaptop: 270 * 4 + 10 * 3,
   },
 
   todoTable: {},

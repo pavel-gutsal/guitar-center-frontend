@@ -1,0 +1,18 @@
+.BlockHomeButtonIcon {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  fill: var(--greyTextUnhighlighted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  padding-right: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.BlockHomeButtonIcon:hover,
+.BlockHomeButtonIcon:focus {
+  fill: var(--brightOrange);
+}

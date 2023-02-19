@@ -1,6 +1,10 @@
 import { Block } from '../../modules/Block/Block';
-import './styles.css';
+import { SPhones } from './Phones.styles';
 
 export const Phones = () => {
-  return <Block />;
+  return (
+    <SPhones>
+      <Block />
+    </SPhones>
+  );
 };

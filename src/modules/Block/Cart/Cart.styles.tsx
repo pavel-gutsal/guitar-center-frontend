@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../Theme';
+import { colors, theme } from '../../../Theme';
 
 export const SSpecification = styled.div`
   display: none;
@@ -11,7 +11,7 @@ export const SSpecification = styled.div`
 export const SCart = styled.div`
   display: flex;
   flex-direction: column;
-  width: 270px;
+  width: ${theme.sizes.cardWidthLaptop}px;
   height: fit-content;
   padding: 15px;
   border: 1px solid #e6e6e6;
