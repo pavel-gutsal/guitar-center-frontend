@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../../../Theme';
 
 export const SBlockSelectBar = styled.div`
   display: flex;
@@ -6,6 +7,11 @@ export const SBlockSelectBar = styled.div`
   justify-content: flex-end;
   width: 100%;
   padding-bottom: 20px;
+
+  @media screen and ${devices.tabletS} {
+    padding: 20px 0;
+    justify-content: flex-start;
+  }
 `;
 
 export const SBlockSelectSX = {

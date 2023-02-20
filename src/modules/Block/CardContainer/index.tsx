@@ -1,4 +1,4 @@
-import { CatalogItem } from '../../../db';
+import { CatalogItem } from '../../../db/type';
 import { SCartContainer } from './CardContainer.styles';
 import { Cart } from '../Cart';
 

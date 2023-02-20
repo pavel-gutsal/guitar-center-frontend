@@ -1,28 +1,30 @@
-import { BlockSections } from '../../../constants';
+import {
+  BlockSections,
+  BlockSectionsContent,
+  ROUTES,
+} from '../../../constants';
 import { ChevronRight } from '../../../SVG/ChevronRight';
 import { SBlockHead, SBlockRouter, SBlockTitle } from './BlockHead.styles';
 import { BlockHomeButtonIcon } from './Buttons/BlockHomeButtonIcon';
-import { BlockLinkAccessories } from './Buttons/BlockLinkAccessories';
+import { BlockLinkLaptops } from './Buttons/BlockLinkLaptops';
 import { BlockLinkPhones } from './Buttons/BlockLinkPhones';
 import { BlockLinkTablet } from './Buttons/BlockLinkTablet';
 
 interface Props {
-  blockHeadSection: BlockSections;
+  location: BlockSections;
 }
 
-export const BlockHead = ({ blockHeadSection }: Props) => {
+export const BlockHead = ({ location }: Props) => {
   return (
     <SBlockHead>
       <SBlockRouter>
         <BlockHomeButtonIcon />
         <ChevronRight />
-        {blockHeadSection === BlockSections.PHONES && <BlockLinkPhones />}
-        {blockHeadSection === BlockSections.TABLETS && <BlockLinkTablet />}
-        {blockHeadSection === BlockSections.ACCESSORIES && (
-          <BlockLinkAccessories />
-        )}
+        {location === BlockSections.phones && <BlockLinkPhones />}
+        {location === BlockSections.tablets && <BlockLinkTablet />}
+        {location === BlockSections.laptops && <BlockLinkLaptops />}
       </SBlockRouter>
-      <SBlockTitle>{blockHeadSection}</SBlockTitle>
+      <SBlockTitle>{BlockSectionsContent[location]}</SBlockTitle>
     </SBlockHead>
   );
 };

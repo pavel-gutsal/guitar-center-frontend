@@ -2,7 +2,10 @@ export const theme = {
   sizes: {
     header: '60px',
     cardWidthLaptop: '270',
-    blockWidthLaptop: 270 * 4 + 10 * 3,
+    cardWidthLaptopS: '250',
+    blockWidthLaptop: '1110', // 270 * 4 + 10 * 3,
+    blockWidthLaptopS: '1030', // 250 * 4 + 10 * 3,
+    blockWidthLaptopNetbook: '830', // 270 * 3 + 10 * 2,
   },
 
   todoTable: {},

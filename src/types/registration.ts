@@ -13,3 +13,12 @@ export interface BearerToken {
   name: string;
   token: string;
 }
+
+export interface ServerError {
+  response?: {
+    data?: {
+      statusCode?: number;
+      message?: string;
+    };
+  };
+}

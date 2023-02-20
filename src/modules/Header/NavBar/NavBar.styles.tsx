@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { colors, devices } from '../../../Theme';
 
 export const StyledContentLeft = styled.div`
@@ -13,7 +14,7 @@ export const StyledNavbar = styled.nav`
   height: 100%;
   width: 100%;
 
-  @media screen and ${devices.laptopS} {
+  @media screen and ${devices.netbook} {
     display: none;
   }
 `;
@@ -55,3 +56,7 @@ export const ButtonWideSX = {
     color: `${colors.blueHeighlight}`,
   },
 };
+
+export const SLink = styled(Link)`
+  text-decoration: none;
+`;

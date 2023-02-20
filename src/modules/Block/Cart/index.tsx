@@ -18,10 +18,11 @@ import {
   SSpecificationKey,
   SSpecificationValue,
   SSpecificationDiv,
+  SImageContainer,
 } from './Cart.styles';
 import { CartButtonBuy } from './Buttons/CartButtonBuy';
 import { CartButtonHeart } from './Buttons/CartButtonHeart';
-import { CatalogItem } from '../../../db';
+import { CatalogItem } from '../../../db/type';
 import { nameNormalize } from './utils';
 
 interface Props {
@@ -31,7 +32,9 @@ interface Props {
 export const Cart = ({ product }: Props) => {
   const currentPriceHandler = () => {
     if (product.discount) {
-      return product.totalPrice - product.totalPrice * product.discount;
+      return Math.floor(
+        product.totalPrice - product.totalPrice * product.discount
+      );
     }
     return product.totalPrice;
   };
@@ -44,7 +47,9 @@ export const Cart = ({ product }: Props) => {
           <SDiscountTag>{`-${product.discount * 100}%`}</SDiscountTag>
         )}
       </SCartTags>
-      <SImage image={product.mainPhoto} />
+      <SImageContainer>
+        <SImage src={product.mainPhoto} />
+      </SImageContainer>
       <SRating>
         <Rating
           name="size-large"

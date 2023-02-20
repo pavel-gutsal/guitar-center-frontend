@@ -3,7 +3,7 @@ import './CartButtonBuy.styles.css';
 export const CartButtonBuy = () => {
   return (
     <button type="button" className="CartButtonBuy">
-      Add to cart
+      <span>Add to cart</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { SBlock } from './Block.styles';
 import { database } from '../../db';
 import { CartContainer } from './CardContainer';
@@ -7,15 +6,16 @@ import { BlockSections } from '../../constants';
 import { BlockSelectBar } from './BlockHead/BlockSelectBar';
 import { BlockPagination } from './BlockPagination';
 
-export const Block = () => {
-  const [blockHeadSection, setBlockHeadSection] = useState<BlockSections>(
-    BlockSections.PHONES
-  );
+interface Props {
+  location: BlockSections;
+}
+
+export const Block = ({ location }: Props) => {
   return (
     <SBlock>
-      <BlockHead blockHeadSection={blockHeadSection} />
+      <BlockHead location={location} />
       <BlockSelectBar />
-      <CartContainer products={database.phones} />
+      <CartContainer products={database[location]} />
       <BlockPagination />
     </SBlock>
   );

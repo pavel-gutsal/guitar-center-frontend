@@ -26,3 +26,7 @@
   --saladGreen: #90be6d;
   --successGreen: #43aa8b;
 }
+
+/* .MuiOutlinedInput-notchedOutline {
+  border-color: var(--brightOrange) !important;
+}  */

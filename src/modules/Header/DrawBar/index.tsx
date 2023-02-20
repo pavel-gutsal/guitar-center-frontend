@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { IconButton } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import {
   SLinkSX,
   SDrawBar,
@@ -10,6 +10,7 @@ import {
   SBackground,
   SCloseButtonSX,
 } from './DrawBack.styles';
+import { ROUTES } from '../../../constants';
 
 interface Props {
   drawBarOpen: boolean;
@@ -17,7 +18,14 @@ interface Props {
 }
 
 export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
+  const navigate = useNavigate();
+
   const toggleDrawBar = () => {
+    setDrawBarOpen((prev) => !prev);
+  };
+
+  const navigateHandler = (path: string) => {
+    navigate(path);
     setDrawBarOpen((prev) => !prev);
   };
 
@@ -37,8 +45,11 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
+              onClick={() => {
+                navigateHandler(ROUTES.PHONES);
+              }}
             >
-              Phones
+              PHONES
             </Button>
           </SListItem>
           <SListItem>
@@ -46,6 +57,9 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
+              onClick={() => {
+                navigateHandler(ROUTES.TABLETS);
+              }}
             >
               TABLETS
             </Button>
@@ -55,8 +69,11 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
+              onClick={() => {
+                navigateHandler(ROUTES.LAPTOPS);
+              }}
             >
-              ACCESSORIES
+              LAPTOPS
             </Button>
           </SListItem>
           <SListItem>

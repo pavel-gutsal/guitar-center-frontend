@@ -1,5 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
-import { SignupData, LoginData } from '../types';
+import { SignupData, LoginData, ServerError } from '../types';
 import { register } from '../api/registration';
 import { PATH } from '../constants';
 
@@ -16,7 +16,10 @@ export const useSignup = () => {
       // set to redux storage, navigate to another page
     },
   });
-  return { signup, isLoading, isError, error };
+
+  const typedError = error as ServerError;
+
+  return { signup, isLoading, isError, error: typedError };
 };
 
 export const useLogin = () => {
@@ -32,5 +35,8 @@ export const useLogin = () => {
       // set to redux storage, navigate to another page
     },
   });
-  return { login, isLoading, isError, error };
+
+  const typedError = error as ServerError;
+
+  return { login, isLoading, isError, error: typedError };
 };

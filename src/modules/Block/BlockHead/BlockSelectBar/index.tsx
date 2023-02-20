@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box/Box';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useState } from 'react';
 import { CartsPerPage, BlockSortBy } from '../../../../constants';
 import {
@@ -16,33 +16,27 @@ export const BlockSelectBar = () => {
     CartsPerPage.SIXTEEN
   );
 
-  const sortByHandler = (event: SelectChangeEvent) => {
+  const sortByHandler = (event: SelectChangeEvent<string>) => {
     setSortBy(event.target.value);
   };
 
-  const cartsPerPageHandler = (event: SelectChangeEvent) => {
-    setCartsPerPage(event.target.value);
+  const cartsPerPageHandler = (event: SelectChangeEvent<string>) => {
+    setCartsPerPage(Number(event.target.value));
   };
 
   return (
     <SBlockSelectBar>
-      <Box sx={{ minWidth: 160 }}>
+      <Box sx={{ minWidth: 170 }}>
         <FormControl fullWidth>
           <Select
             value={sortBy}
             onChange={sortByHandler}
             defaultValue={BlockSortBy.popularity}
             sx={SBlockSelectSX}
-            color="orange"
           >
             {Object.values(BlockSortBy).map((value) => {
               return (
-                <MenuItem
-                  value={value}
-                  key={value}
-                  color="orange"
-                  sx={SBlockMenuItemSX}
-                >
+                <MenuItem value={value} key={value} sx={SBlockMenuItemSX}>
                   {value}
                 </MenuItem>
               );
@@ -53,19 +47,17 @@ export const BlockSelectBar = () => {
       <Box sx={{ minWidth: 80 }}>
         <FormControl fullWidth>
           <Select
-            value={cartsPerPage}
+            value={String(cartsPerPage)}
             onChange={cartsPerPageHandler}
-            defaultValue={CartsPerPage.SIXTEEN}
-            color="orange"
+            defaultValue={String(CartsPerPage.SIXTEEN)}
             sx={SBlockSelectSX}
           >
             {Object.values(CartsPerPage).map((value) => {
               return (
                 <MenuItem
-                  value={value}
+                  value={String(value)}
                   key={value}
                   sx={SBlockMenuItemSX}
-                  color="orange"
                 >
                   {value}
                 </MenuItem>

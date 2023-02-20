@@ -28,6 +28,36 @@ const theme = createTheme({
   },
 });
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    orange: Palette['primary'];
+  }
+
+  // allow configuration using `createTheme`
+  interface PaletteOptions {
+    orange?: PaletteOptions['primary'];
+  }
+}
+
+// Update the Button's color prop options
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    orange: true;
+  }
+}
+
+declare module '@mui/material/Pagination' {
+  interface PaginationPropsColorOverrides {
+    orange: true;
+  }
+}
+
+declare module '@mui/material/Select' {
+  interface SelectPropsColorOverrides {
+    orange: true;
+  }
+}
+
 interface Props {
   children: React.ReactNode;
 }

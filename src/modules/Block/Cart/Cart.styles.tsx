@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, theme } from '../../../Theme';
+import { colors, devices, theme } from '../../../Theme';
 
 export const SSpecification = styled.div`
   display: none;
@@ -11,7 +11,7 @@ export const SSpecification = styled.div`
 export const SCart = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${theme.sizes.cardWidthLaptop}px;
+  width: 100%;
   height: fit-content;
   padding: 15px;
   border: 1px solid #e6e6e6;
@@ -28,23 +28,48 @@ export const SCart = styled.div`
       display: flex;
     }
   }
+
+  @media screen and ${devices.mobileM} {
+    padding: 10px;
+  }
+
+  @media screen and ${devices.mobileL} {
+    &:hover,
+    &:focus {
+      ${SSpecification} {
+        display: none;
+      }
+    }
+  }
 `;
 
-interface SImageProps {
-  image: string;
-}
-
-export const SImage = styled.button<SImageProps>`
-  width: 100%;
-  height: 250px;
+export const SImageContainer = styled.button`
   outline: none;
   border: none;
+  background: white;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  background: ${({ image }) => `url(${image})`};
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   margin-bottom: 10px;
+
+  @media screen and ${devices.mobileL} {
+    height: 200px;
+  }
+
+  @media screen and ${devices.mobileM} {
+    height: 130px;
+  }
+`;
+
+export const SImage = styled.img`
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export const STitle = styled.h3`
@@ -54,6 +79,19 @@ export const STitle = styled.h3`
   color: #454545;
   font-size: 16px;
   line-height: 19px;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  @media screen and ${devices.mobileM} {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0;
+    overflow: hidden;
+    height: 30px;
+  }
 `;
 
 export const SRating = styled.div`
@@ -61,16 +99,29 @@ export const SRating = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
+
+  @media screen and ${devices.mobileL} {
+    gap: 10px;
+  }
 `;
 
 export const SRatingSX = {
   scale: '1.3',
   transform: 'translateX(5px)',
+
+  [`@media screen and ${devices.mobileL}`]: {
+    scale: '1',
+    transform: 'translateX(0)',
+  },
 };
 
 export const SRatingText = styled.h3`
   height: 14px;
   color: gray;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 12px;
+  }
 `;
 
 export const SButtonContainer = styled.div`
@@ -80,6 +131,11 @@ export const SButtonContainer = styled.div`
   width: 100%;
   height: 40px;
   margin-top: 10px;
+
+  @media screen and ${devices.mobileL} {
+    height: 32px;
+    grid-template-columns: 1fr 32px;
+  }
 `;
 
 export const SButtonBuy = styled.button`
@@ -109,12 +165,28 @@ export const SPriceCurrent = styled.h3`
   font-size: 20px;
   font-weight: 500;
   color: #444444;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 16px;
+  }
+
+  @media screen and ${devices.mobileM} {
+    font-size: 14px;
+  }
 `;
 
 export const SPriceDiscounted = styled.h3`
   font-size: 16px;
   text-decoration: line-through;
   color: #8a8a8a;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 14px;
+  }
+
+  @media screen and ${devices.mobileM} {
+    font-size: 12px;
+  }
 `;
 
 export const SCartTags = styled.div`
@@ -124,6 +196,10 @@ export const SCartTags = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media screen and ${devices.mobileL} {
+    gap: 5px;
+  }
 `;
 
 export const SDiscountTag = styled.h1`
@@ -135,6 +211,10 @@ export const SDiscountTag = styled.h1`
   padding: 3px 6px;
   background: ${colors.brigthRed};
   color: white;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 12px;
+  }
 `;
 
 export const SBestSellerTag = styled.h1`
@@ -146,22 +226,44 @@ export const SBestSellerTag = styled.h1`
   padding: 3px 6px;
   background: ${colors.brightOrange};
   color: white;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 12px;
+  }
 `;
 
 export const SSpecificationTitle = styled.h1`
   font-size: 14px;
   font-weight: 500;
   padding: 10px 0 5px 0;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 14px;
+  }
+
+  @media screen and ${devices.mobileM} {
+    font-size: 13px;
+    font-weight: 400;
+  }
 `;
 
 export const SSpecificationKey = styled.h2`
   font-size: 13px;
   font-weight: 400;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 12px;
+    font-weight: 300;
+  }
 `;
 
 export const SSpecificationValue = styled.h2`
   font-size: 12px;
   font-weight: 300;
+
+  @media screen and ${devices.mobileL} {
+    font-size: 11px;
+  }
 `;
 
 export const SSpecificationDiv = styled.div`

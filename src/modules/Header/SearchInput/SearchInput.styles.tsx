@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../Theme';
+import { colors, devices } from '../../../Theme';
 
 export const StyledContainer = styled.div`
   position: relative;
@@ -20,5 +20,9 @@ export const StyledInput = styled.input`
   &:active {
     border: 2px solid ${colors.blueHeighlight};
     background: white;
+  }
+
+  @media screen and ${devices.laptopS} {
+    min-width: 350px;
   }
 `;

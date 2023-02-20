@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button';
+import { devices } from '../../Theme';
 import './Store.styles.css';
 
 export const ButtonSX = {
@@ -12,7 +13,7 @@ export const ButtonSX = {
     'border-bottom': '3px solid #1787ff',
   },
 
-  '@media (max-width: 1150px)': {
+  [`@media ${devices.netbook}`]: {
     display: 'none',
   },
 };
