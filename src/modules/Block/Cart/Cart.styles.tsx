@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, devices, theme } from '../../../Theme';
+import { colors, devices } from '../../../Theme';
 
 export const SSpecification = styled.div`
   display: none;

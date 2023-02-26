@@ -45,14 +45,14 @@ export const Styledh3 = styled.h3`
 export const ButtonWideSX = {
   width: '120px',
   height: '60px',
-  'line-height': '60px',
-  'border-radius': '0',
-  'border-bottom': `3px solid ${colors.darkHeader}`,
+  lineHeight: '60px',
+  borderRadius: '0',
+  borderBottom: `3px solid ${colors.darkHeader}`,
   transition: 'all 0.3s ease-in-out',
   color: `${colors.greyFont}`,
 
   '&:hover, &:focus': {
-    'border-bottom': `3px solid ${colors.blueHeighlight}`,
+    borderBottom: `3px solid ${colors.blueHeighlight}`,
     color: `${colors.blueHeighlight}`,
   },
 };

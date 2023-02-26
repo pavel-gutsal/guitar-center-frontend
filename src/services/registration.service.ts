@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { SignupData, LoginData, ServerError } from '../types';
-import { register } from '../api/registration';
+import { register } from '../api/common';
 import { PATH } from '../constants';
 
 export const useSignup = () => {

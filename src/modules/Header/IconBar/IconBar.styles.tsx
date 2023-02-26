@@ -10,11 +10,11 @@ export const StyleIconBar = styled.div`
 export const ButtonSX = {
   width: '60px',
   height: '60px',
-  'border-radius': '0',
-  'border-bottom': `3px solid ${colors.darkHeader}`,
+  borderRadius: '0',
+  borderBottom: `3px solid ${colors.darkHeader}`,
   transition: 'all 0.3s ease-in-out',
 
   '&:hover, &:focus': {
-    'border-bottom': `3px solid ${colors.blueHeighlight}`,
+    borderBottom: `3px solid ${colors.blueHeighlight}`,
   },
 };

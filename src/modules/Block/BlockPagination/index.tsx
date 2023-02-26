@@ -1,11 +1,23 @@
 import Pagination from '@mui/material/Pagination';
 import { SBlockPagination } from './BlockPagination.styles';
 
-export const BlockPagination = () => {
+interface Props {
+  page: number;
+  pagesNumber: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export const BlockPagination = ({ page, pagesNumber, setPage }: Props) => {
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
+
   return (
     <SBlockPagination>
       <Pagination
-        count={10}
+        count={pagesNumber}
+        onChange={handleChange}
+        page={page}
         variant="outlined"
         shape="rounded"
         color="orange"

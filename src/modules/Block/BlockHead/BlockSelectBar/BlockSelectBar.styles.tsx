@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices } from '../../../../Theme';
+import { colors, devices } from '../../../../Theme';
 
 export const SBlockSelectBar = styled.div`
   display: flex;
@@ -16,8 +16,8 @@ export const SBlockSelectBar = styled.div`
 
 export const SBlockSelectSX = {
   height: '32px',
-  'font-size': '14px',
-  'border-radius': '7px',
+  fontSize: '14px',
+  borderRadius: '7px',
   outline: 'none',
   color: '#575757',
 };
@@ -30,4 +30,10 @@ export const SBlockMenuItemSX = {
     color: '#3c3c3c',
     backgroundColor: '#f8961e2d',
   },
+};
+
+export const SkeletonSX = {
+  backgroundColor: colors.skeletonWhite,
+  height: '32px',
+  borderRadius: '10px',
 };

@@ -1,16 +1,17 @@
-import { CatalogItem } from './type';
+import { Category, CatalogItem } from '../types';
 
 export const laptops = [
   {
     id: 1,
+    category: Category.laptops,
     model: 'Lenovo IdeaPad 1 15IGL7 Cloud Grey (82V7003XRA)',
     mainPhoto:
       'https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/f/1/f10f4f1cbe2f2d9f23107f13c5f2ee07.jpg&w=256&q=60',
     rating: 4.9,
     bestSeller: false,
     totalPrice: 380,
-    discount: 0.03,
-    ShortSpecs: [
+    discountedPrice: 340,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'TN+film'],
       ['Display Surface', 'Matte'],
@@ -20,14 +21,15 @@ export const laptops = [
   },
   {
     id: 2,
+    category: Category.laptops,
     model: 'Asus ROG Strix G15 G513IC-HN004 Eclipse Gray (90NR0502-M003L0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/4/f/4f2c2755bfc511d1289e7e687c65e480.jpg',
     rating: 4.9,
     bestSeller: true,
     totalPrice: 780,
-    discount: 0.13,
-    ShortSpecs: [
+    discountedPrice: 640,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matte'],
@@ -37,14 +39,15 @@ export const laptops = [
   },
   {
     id: 3,
+    category: Category.laptops,
     model: 'Apple MacBook Air M1 Chip 13"/256 (MGN63UA/A) Space Gray 2020',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/c/1/c1026e47af36b4c550af108577f48c6b.jpg',
     rating: 4.9,
     bestSeller: false,
     totalPrice: 1280,
-    discount: 0.09,
-    ShortSpecs: [
+    discountedPrice: 1280,
+    shortSpecs: [
       ['Screen Size', '13.3 inch'],
       ['Display', 'Retina'],
       ['Display Surface', 'Glassy'],
@@ -54,14 +57,15 @@ export const laptops = [
   },
   {
     id: 33,
+    category: Category.laptops,
     model: 'Lenovo Legion 5 17ITH6H Phantom Blue (82JM0044RA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1671614886-notebook-714731-6.jpg',
     rating: 4.9,
     bestSeller: false,
     totalPrice: 1450,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 1450,
+    shortSpecs: [
       ['Screen Size', '17.3 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Glassy'],
@@ -71,14 +75,15 @@ export const laptops = [
   },
   {
     id: 4,
+    category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506LHB-HN324 Bonfire Black (90NR03U2-M008H0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/d/4/d4a23a5d88c1d2c796b0af8558b4b81b.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 780,
-    discount: 0.11,
-    ShortSpecs: [
+    discountedPrice: 740,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -88,14 +93,15 @@ export const laptops = [
   },
   {
     id: 5,
+    category: Category.laptops,
     model: 'Asus X515EP-BQ658 Transparent Silver (90NB0TZ2-M00HY0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/7/d/7d373bd61bb18c2f7f29dccf9f851152.jpg',
     rating: 4.7,
     bestSeller: false,
     totalPrice: 500,
-    discount: 0.13,
-    ShortSpecs: [
+    discountedPrice: 420,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -105,14 +111,15 @@ export const laptops = [
   },
   {
     id: 6,
+    category: Category.laptops,
     model: 'Lenovo IdeaPad Gaming 3 15IHU6 Shadow Black (82K101FKRA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/5/7/57438b46ec290d0eb2b4ca32938ae76b.jpg',
     rating: 5,
     bestSeller: false,
     totalPrice: 730,
-    discount: 0.08,
-    ShortSpecs: [
+    discountedPrice: 650,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -122,14 +129,15 @@ export const laptops = [
   },
   {
     id: 7,
+    category: Category.laptops,
     model: 'Lenovo Legion 5 15IAH7H Storm Grey (82RB00QHRA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/b/d/bd6db6722e2c1211289f605cd73469fd.jpg',
     rating: 4.3,
     bestSeller: false,
     totalPrice: 1460,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 1380,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -139,14 +147,15 @@ export const laptops = [
   },
   {
     id: 8,
+    category: Category.laptops,
     model: 'realme Book Prime 14 I5 16/512GB (Grey)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/c/3/c3f28a69623b3b523ee057191717bfef.jpg',
     rating: 3.8,
     bestSeller: false,
     totalPrice: 680,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 560,
+    shortSpecs: [
       ['Screen Size', '14 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -156,14 +165,15 @@ export const laptops = [
   },
   {
     id: 9,
+    category: Category.laptops,
     model: 'Acer Aspire 7 A715-43G-R7M7 Charcoal Black (NH.QHDEU.006)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/d/6/d6988451f09ff5a5a28802cb83802d31.jpg',
     rating: 4.2,
     bestSeller: false,
     totalPrice: 980,
-    discount: 0.24,
-    ShortSpecs: [
+    discountedPrice: 880,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -173,14 +183,15 @@ export const laptops = [
   },
   {
     id: 10,
+    category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506HC-HN004 Black (90NR0724-M00NU0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/1/1/112c205af2e3afe247e03cd26ec14498.jpg',
     rating: 4.4,
     bestSeller: false,
     totalPrice: 820,
-    discount: 0.17,
-    ShortSpecs: [
+    discountedPrice: 820,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -190,14 +201,15 @@ export const laptops = [
   },
   {
     id: 11,
+    category: Category.laptops,
     model: 'Lenovo Legion 5 Pro 16ITH6H Stingray Stingray (82JD00FFRA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1666267503-notebook-711811-2.jpg',
     rating: 4.6,
     bestSeller: false,
     totalPrice: 1450,
-    discount: 0.03,
-    ShortSpecs: [
+    discountedPrice: 1450,
+    shortSpecs: [
       ['Screen Size', '16 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -207,14 +219,15 @@ export const laptops = [
   },
   {
     id: 12,
+    category: Category.laptops,
     model: 'Asus TUF Gaming A17 FA706IC-HX001 Eclipse Gray (90NR0674-M008J0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/0/c/0cc66c256979db4e3af1cb776db0a999.jpg',
     rating: 4.4,
     bestSeller: false,
     totalPrice: 900,
-    discount: 0.03,
-    ShortSpecs: [
+    discountedPrice: 850,
+    shortSpecs: [
       ['Screen Size', '17.3 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -224,14 +237,15 @@ export const laptops = [
   },
   {
     id: 13,
+    category: Category.laptops,
     model: 'Lenovo IdeaPad 1 15IGL7 Cloud Grey (82V7003XRA)',
     mainPhoto:
       'https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/f/1/f10f4f1cbe2f2d9f23107f13c5f2ee07.jpg&w=256&q=60',
     rating: 4.9,
     bestSeller: false,
     totalPrice: 380,
-    discount: 0.03,
-    ShortSpecs: [
+    discountedPrice: 320,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'TN+film'],
       ['Display Surface', 'Matte'],
@@ -241,14 +255,15 @@ export const laptops = [
   },
   {
     id: 14,
+    category: Category.laptops,
     model: 'Asus ROG Strix G15 G513IC-HN004 Eclipse Gray (90NR0502-M003L0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/4/f/4f2c2755bfc511d1289e7e687c65e480.jpg',
     rating: 4.9,
     bestSeller: true,
     totalPrice: 780,
-    discount: 0.13,
-    ShortSpecs: [
+    discountedPrice: 780,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matte'],
@@ -258,14 +273,15 @@ export const laptops = [
   },
   {
     id: 15,
+    category: Category.laptops,
     model: 'Apple MacBook Air M1 Chip 13"/256 (MGN63UA/A) Space Gray 2020',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/c/1/c1026e47af36b4c550af108577f48c6b.jpg',
     rating: 4.9,
     bestSeller: false,
     totalPrice: 1280,
-    discount: 0.09,
-    ShortSpecs: [
+    discountedPrice: 1280,
+    shortSpecs: [
       ['Screen Size', '13.3 inch'],
       ['Display', 'Retina'],
       ['Display Surface', 'Glassy'],
@@ -275,14 +291,15 @@ export const laptops = [
   },
   {
     id: 16,
+    category: Category.laptops,
     model: 'Lenovo Legion 5 17ITH6H Phantom Blue (82JM0044RA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1671614886-notebook-714731-6.jpg',
     rating: 4.9,
     bestSeller: false,
     totalPrice: 1450,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 1350,
+    shortSpecs: [
       ['Screen Size', '17.3 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Glassy'],
@@ -292,14 +309,15 @@ export const laptops = [
   },
   {
     id: 17,
+    category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506LHB-HN324 Bonfire Black (90NR03U2-M008H0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/d/4/d4a23a5d88c1d2c796b0af8558b4b81b.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 780,
-    discount: 0.11,
-    ShortSpecs: [
+    discountedPrice: 700,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -309,14 +327,15 @@ export const laptops = [
   },
   {
     id: 18,
+    category: Category.laptops,
     model: 'Asus X515EP-BQ658 Transparent Silver (90NB0TZ2-M00HY0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/7/d/7d373bd61bb18c2f7f29dccf9f851152.jpg',
     rating: 4.7,
     bestSeller: false,
     totalPrice: 500,
-    discount: 0.13,
-    ShortSpecs: [
+    discountedPrice: 440,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -326,14 +345,15 @@ export const laptops = [
   },
   {
     id: 19,
+    category: Category.laptops,
     model: 'Lenovo IdeaPad Gaming 3 15IHU6 Shadow Black (82K101FKRA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/5/7/57438b46ec290d0eb2b4ca32938ae76b.jpg',
     rating: 5,
     bestSeller: false,
     totalPrice: 730,
-    discount: 0.08,
-    ShortSpecs: [
+    discountedPrice: 660,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -343,14 +363,15 @@ export const laptops = [
   },
   {
     id: 20,
+    category: Category.laptops,
     model: 'Lenovo Legion 5 15IAH7H Storm Grey (82RB00QHRA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/b/d/bd6db6722e2c1211289f605cd73469fd.jpg',
     rating: 4.3,
     bestSeller: false,
     totalPrice: 1460,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 1460,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -360,14 +381,15 @@ export const laptops = [
   },
   {
     id: 21,
+    category: Category.laptops,
     model: 'realme Book Prime 14 I5 16/512GB (Grey)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/c/3/c3f28a69623b3b523ee057191717bfef.jpg',
     rating: 3.8,
     bestSeller: false,
     totalPrice: 680,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 680,
+    shortSpecs: [
       ['Screen Size', '14 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -377,14 +399,15 @@ export const laptops = [
   },
   {
     id: 22,
+    category: Category.laptops,
     model: 'Acer Aspire 7 A715-43G-R7M7 Charcoal Black (NH.QHDEU.006)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/d/6/d6988451f09ff5a5a28802cb83802d31.jpg',
     rating: 4.2,
     bestSeller: false,
     totalPrice: 980,
-    discount: 0.27,
-    ShortSpecs: [
+    discountedPrice: 890,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -394,14 +417,15 @@ export const laptops = [
   },
   {
     id: 23,
+    category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506HC-HN004 Black (90NR0724-M00NU0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/1/1/112c205af2e3afe247e03cd26ec14498.jpg',
     rating: 4.4,
     bestSeller: false,
     totalPrice: 820,
-    discount: 0.17,
-    ShortSpecs: [
+    discountedPrice: 820,
+    shortSpecs: [
       ['Screen Size', '15.6 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -411,14 +435,15 @@ export const laptops = [
   },
   {
     id: 24,
+    category: Category.laptops,
     model: 'Lenovo Legion 5 Pro 16ITH6H Stingray Stingray (82JD00FFRA)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1666267503-notebook-711811-2.jpg',
     rating: 4.6,
     bestSeller: false,
     totalPrice: 1450,
-    discount: 0.03,
-    ShortSpecs: [
+    discountedPrice: 1320,
+    shortSpecs: [
       ['Screen Size', '16 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],
@@ -428,14 +453,15 @@ export const laptops = [
   },
   {
     id: 25,
+    category: Category.laptops,
     model: 'Asus TUF Gaming A17 FA706IC-HX001 Eclipse Gray (90NR0674-M008J0)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/0/c/0cc66c256979db4e3af1cb776db0a999.jpg',
     rating: 4.4,
     bestSeller: false,
     totalPrice: 900,
-    discount: 0.03,
-    ShortSpecs: [
+    discountedPrice: 900,
+    shortSpecs: [
       ['Screen Size', '17.3 inch'],
       ['Display', 'IPS'],
       ['Display Surface', 'Matty'],

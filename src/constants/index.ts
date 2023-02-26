@@ -12,12 +12,6 @@ export enum ROUTES {
   LAPTOPS = '/laptops',
 }
 
-export enum BlockSections {
-  phones = 'phones',
-  tablets = 'tablets',
-  laptops = 'laptops',
-}
-
 export enum BlockSectionsContent {
   phones = 'Smart Phones',
   tablets = 'Tablets',
@@ -25,10 +19,22 @@ export enum BlockSectionsContent {
 }
 
 export const BlockSortBy = {
-  popularity: 'Popularity',
-  cheapest: 'Price: Low to High',
-  mostExpansive: 'Price: High to Low',
-  newest: 'Newest Arrivals',
+  popularity: {
+    label: 'Popularity',
+    value: 'bestSeller',
+  },
+  rating: {
+    label: 'Rating',
+    value: 'rating',
+  },
+  cheapest: {
+    label: 'Price: Low to High',
+    value: 'discountedPrice',
+  },
+  newest: {
+    label: 'Newest Arrivals',
+    value: 'createdAt',
+  },
 };
 
 export const CartsPerPage = {

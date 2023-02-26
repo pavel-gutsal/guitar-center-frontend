@@ -1,6 +1,7 @@
 export const theme = {
   sizes: {
     header: '60px',
+    paddingLaptop: '60px',
     cardWidthLaptop: '270',
     cardWidthLaptopS: '250',
     blockWidthLaptop: '1110', // 270 * 4 + 10 * 3,

@@ -1,16 +1,17 @@
-import { CatalogItem } from './type';
+import { Category, CatalogItem } from '../types';
 
 export const phones = [
   {
     id: 1,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: false,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 550,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -21,14 +22,15 @@ export const phones = [
   },
   {
     id: 2,
+    category: Category.phones,
     model: 'realme 10 4G 8/128GB (Rush Black)',
     mainPhoto:
       'https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/d/3/d3377115cec2bf49ea5b21a3ee6a0c2a.jpg&w=256&q=60',
     rating: 4.3,
     bestSeller: false,
     totalPrice: 450,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 450,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -39,14 +41,15 @@ export const phones = [
   },
   {
     id: 3,
+    category: Category.phones,
     model: 'OPPO A17k 3/64GB (Blue)',
     mainPhoto:
       'https://i.citrus.world/imgcache/size_180/uploads/shop/b/8/b8236485187b5143fcc0d5c8bd6a3f10.jpg',
     rating: 4.7,
     bestSeller: true,
     totalPrice: 350,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 300,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -57,14 +60,15 @@ export const phones = [
   },
   {
     id: 4,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 500,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -75,14 +79,15 @@ export const phones = [
   },
   {
     id: 5,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 510,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -93,14 +98,15 @@ export const phones = [
   },
   {
     id: 6,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: null,
-    ShortSpecs: [
+    discountedPrice: 550,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -111,14 +117,15 @@ export const phones = [
   },
   {
     id: 7,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 480,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -129,14 +136,15 @@ export const phones = [
   },
   {
     id: 8,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 470,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -147,14 +155,15 @@ export const phones = [
   },
   {
     id: 9,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 510,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -165,14 +174,15 @@ export const phones = [
   },
   {
     id: 10,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 550,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -183,14 +193,15 @@ export const phones = [
   },
   {
     id: 11,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 550,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -201,14 +212,15 @@ export const phones = [
   },
   {
     id: 12,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 550,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],
@@ -219,14 +231,15 @@ export const phones = [
   },
   {
     id: 13,
+    category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
       'https://content.rozetka.com.ua/goods/images/big_tile/263857428.jpg',
     rating: 4.5,
     bestSeller: true,
     totalPrice: 550,
-    discount: 0.2,
-    ShortSpecs: [
+    discountedPrice: 520,
+    shortSpecs: [
       ['Display', 'Super AMOLED Display'],
       ['Screen Size', '6.5 inch'],
       ['Weights', '189g'],

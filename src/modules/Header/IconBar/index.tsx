@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
-import { CartIcon } from '../../../SVG/CartIcon';
-import { Heart } from '../../../SVG/Heart';
+import { CartIcon } from '../../../assets/SVG/CartIcon';
+import { Heart } from '../../../assets/SVG/Heart';
 import AccountMenu from '../RegisterModal';
 import { StyleIconBar, ButtonSX } from './IconBar.styles';
 

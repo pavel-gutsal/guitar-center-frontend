@@ -2,26 +2,37 @@ import Box from '@mui/material/Box/Box';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { useState } from 'react';
-import { CartsPerPage, BlockSortBy } from '../../../../constants';
+import { BlockSortBy, CartsPerPage } from '../../../../constants';
+import { Limit, SortBy } from '../../../../types';
 import {
   SBlockSelectBar,
   SBlockSelectSX,
   SBlockMenuItemSX,
 } from './BlockSelectBar.styles';
 
-export const BlockSelectBar = () => {
-  const [sortBy, setSortBy] = useState<string>(BlockSortBy.popularity);
-  const [cartsPerPage, setCartsPerPage] = useState<number>(
-    CartsPerPage.SIXTEEN
-  );
+interface Props {
+  limit: Limit;
+  setLimit: React.Dispatch<React.SetStateAction<Limit>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  sortBy: SortBy;
+  setSortBy: React.Dispatch<React.SetStateAction<SortBy>>;
+}
 
+export const BlockSelectBar = ({
+  limit,
+  setLimit,
+  setPage,
+  sortBy,
+  setSortBy,
+}: Props) => {
   const sortByHandler = (event: SelectChangeEvent<string>) => {
     setSortBy(event.target.value);
+    setPage(1);
   };
 
-  const cartsPerPageHandler = (event: SelectChangeEvent<string>) => {
-    setCartsPerPage(Number(event.target.value));
+  const cartsPerPageHandler = (event: SelectChangeEvent<Limit>) => {
+    setLimit(Number(event.target.value));
+    setPage(1);
   };
 
   return (
@@ -31,13 +42,13 @@ export const BlockSelectBar = () => {
           <Select
             value={sortBy}
             onChange={sortByHandler}
-            defaultValue={BlockSortBy.popularity}
+            defaultValue={BlockSortBy.newest.value}
             sx={SBlockSelectSX}
           >
-            {Object.values(BlockSortBy).map((value) => {
+            {Object.values(BlockSortBy).map(({ label, value }) => {
               return (
                 <MenuItem value={value} key={value} sx={SBlockMenuItemSX}>
-                  {value}
+                  {label}
                 </MenuItem>
               );
             })}
@@ -47,7 +58,7 @@ export const BlockSelectBar = () => {
       <Box sx={{ minWidth: 80 }}>
         <FormControl fullWidth>
           <Select
-            value={String(cartsPerPage)}
+            value={limit}
             onChange={cartsPerPageHandler}
             defaultValue={String(CartsPerPage.SIXTEEN)}
             sx={SBlockSelectSX}

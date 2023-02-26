@@ -8,7 +8,7 @@ import Logout from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button } from '@mui/material';
 import { ButtonSX } from '../IconBar/IconBar.styles';
-import { User } from '../../../SVG/User';
+import { User } from '../../../assets/SVG/User';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

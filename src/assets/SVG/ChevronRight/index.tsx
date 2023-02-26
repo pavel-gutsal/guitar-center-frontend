@@ -1,4 +1,4 @@
-import { colors } from '../../Theme';
+import { colors } from '../../../Theme';
 
 export const ChevronRight = () => {
   return (

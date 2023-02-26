@@ -25,5 +25,9 @@ module.exports = {
     'arrow-body-style': 0,
     'react/react-in-jsx-scope': 0,
     'react/jsx-props-no-spreading': 0,
+    'react/require-default-props': 0,
+    'react/no-array-index-key': 0,
+    'no-underscore-dangle': 0,
+    'no-nested-ternary': 0,
   },
 };

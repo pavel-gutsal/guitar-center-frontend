@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { colors, theme } from '../../../Theme';
 
 interface SBackgroundProps {
@@ -57,18 +56,18 @@ export const SLinkSX = {
   width: '100%',
   height: '100%',
   display: 'flex',
-  'justify-content': 'space-between',
+  justifyContent: 'space-between',
   padding: '0 20px 0 40px',
-  'line-height': '50px',
-  'border-radius': '0',
-  'border-bottom': `1px solid ${colors.greyFont}`,
-  'border-top': `1px solid ${colors.darkHeader}`,
+  lineHeight: '50px',
+  borderRadius: '0',
+  borderBottom: `1px solid ${colors.greyFont}`,
+  borderTop: `1px solid ${colors.darkHeader}`,
   transition: 'all 0.3s ease-in-out',
   color: `${colors.greyFont}`,
 
   '&:hover, &:focus': {
-    'border-bottom': `1px solid ${colors.blueHeighlight}`,
-    'border-top': `1px solid ${colors.blueHeighlight}`,
+    borderBottom: `1px solid ${colors.blueHeighlight}`,
+    borderTop: `1px solid ${colors.blueHeighlight}`,
     color: `${colors.blueHeighlight}`,
   },
 };
@@ -77,10 +76,10 @@ export const SCloseButtonSX = {
   width: '60px',
   height: '60px',
   display: 'flex',
-  'justify-content': 'center',
-  'align-items': 'center',
-  'padding-left': '20px',
-  'border-radius': '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingLeft: '20px',
+  borderRadius: '50%',
   border: `none`,
   transition: 'all 0.3s ease-in-out',
   color: `${colors.greyFont}`,

@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { devices } from '../../Theme';
+import { devices } from '../../../Theme';
 import '../SVG.styles.css';
 
 export const ButtonSX = {

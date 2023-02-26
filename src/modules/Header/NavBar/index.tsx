@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { ROUTES } from '../../../constants';
-import { MenuButton } from '../../../SVG/MenuButton/MenuButton';
-import { Store } from '../../../SVG/Store';
+import { MenuButton } from '../../../assets/SVG/MenuButton/MenuButton';
+import { Store } from '../../../assets/SVG/Store';
 import { SearchInput } from '../SearchInput';
 import {
   ButtonWideSX,

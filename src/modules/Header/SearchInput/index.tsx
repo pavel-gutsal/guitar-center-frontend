@@ -1,4 +1,4 @@
-import { Search } from '../../../SVG/Search';
+import { Search } from '../../../assets/SVG/Search';
 import { StyledInput, StyledContainer } from './SearchInput.styles';
 
 export const SearchInput = () => {

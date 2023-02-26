@@ -22,49 +22,57 @@ import {
 } from './Cart.styles';
 import { CartButtonBuy } from './Buttons/CartButtonBuy';
 import { CartButtonHeart } from './Buttons/CartButtonHeart';
-import { CatalogItem } from '../../../db/type';
 import { nameNormalize } from './utils';
+import { CatalogItem } from '../../../types';
+
+const calculateDiscount = (discountedPrice, totalPrice) => {
+  return Math.round(100 - (discountedPrice / totalPrice) * 100);
+};
 
 interface Props {
   product: CatalogItem;
 }
 
 export const Cart = ({ product }: Props) => {
-  const currentPriceHandler = () => {
-    if (product.discount) {
-      return Math.floor(
-        product.totalPrice - product.totalPrice * product.discount
-      );
-    }
-    return product.totalPrice;
-  };
+  const {
+    bestSeller,
+    discountedPrice,
+    totalPrice,
+    mainPhoto,
+    rating,
+    model,
+    shortSpecs,
+  } = product;
 
   return (
     <SCart>
       <SCartTags>
-        {product.bestSeller && <SBestSellerTag>Best Seller</SBestSellerTag>}
-        {product.discount && (
-          <SDiscountTag>{`-${product.discount * 100}%`}</SDiscountTag>
+        {bestSeller && <SBestSellerTag>Best Seller</SBestSellerTag>}
+        {discountedPrice < totalPrice && (
+          <SDiscountTag>{`-${calculateDiscount(
+            discountedPrice,
+            totalPrice
+          )}%`}</SDiscountTag>
         )}
       </SCartTags>
       <SImageContainer>
-        <SImage src={product.mainPhoto} />
+        <SImage src={mainPhoto} />
       </SImageContainer>
       <SRating>
         <Rating
           name="size-large"
-          value={product.rating}
+          value={rating}
           precision={0.1}
           sx={SRatingSX}
           readOnly
         />
-        <SRatingText>{product.rating}</SRatingText>
+        <SRatingText>{rating}</SRatingText>
       </SRating>
-      <STitle>{nameNormalize(product.model)}</STitle>
+      <STitle>{nameNormalize(model)}</STitle>
       <SPrice>
-        <SPriceCurrent>{`$${currentPriceHandler()}`}</SPriceCurrent>
-        {product.discount && (
-          <SPriceDiscounted>{`$${product.totalPrice}`}</SPriceDiscounted>
+        <SPriceCurrent>{`$${discountedPrice}`}</SPriceCurrent>
+        {discountedPrice < totalPrice && (
+          <SPriceDiscounted>{`$${totalPrice}`}</SPriceDiscounted>
         )}
       </SPrice>
       <SButtonContainer>
@@ -73,7 +81,7 @@ export const Cart = ({ product }: Props) => {
       </SButtonContainer>
       <SSpecification>
         <SSpecificationTitle>Specification</SSpecificationTitle>
-        {product.ShortSpecs.map((el) => {
+        {shortSpecs.map((el) => {
           return (
             <SSpecificationDiv key={el[0]}>
               <SSpecificationKey>{`${el[0]}:`}</SSpecificationKey>
