@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const baseUrl = 'https://guitar-center.onrender.com';
-// export const baseUrl = 'http://localhost:3000';
 
 const config = { baseURL: baseUrl };
 export const axiosInstance = axios.create(config);
