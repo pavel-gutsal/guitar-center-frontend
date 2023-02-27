@@ -25,7 +25,10 @@ import { CartButtonHeart } from './Buttons/CartButtonHeart';
 import { nameNormalize } from './utils';
 import { CatalogItem } from '../../../types';
 
-const calculateDiscount = (discountedPrice, totalPrice) => {
+const calculateDiscount = (
+  discountedPrice: number,
+  totalPrice: number
+): number => {
   return Math.round(100 - (discountedPrice / totalPrice) * 100);
 };
 

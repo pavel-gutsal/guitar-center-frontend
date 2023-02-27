@@ -2,7 +2,7 @@ import { Category, CatalogItem } from '../types';
 
 export const tablets = [
   {
-    id: 1,
+    _id: 1,
     category: Category.tablets,
     model: 'Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021',
     mainPhoto:
@@ -20,7 +20,7 @@ export const tablets = [
     ],
   },
   {
-    id: 2,
+    _id: 2,
     category: Category.tablets,
     model: 'Samsung Galaxy Tab А8 10.5" 4/64GB LTE Dark Grey (SM-X205NZAESEK)',
     mainPhoto:
@@ -38,7 +38,7 @@ export const tablets = [
     ],
   },
   {
-    id: 3,
+    _id: 3,
     category: Category.tablets,
     model: 'realme Pad 10.4" 4/64GB Wi-Fi (Grey)',
     mainPhoto:
@@ -56,7 +56,7 @@ export const tablets = [
     ],
   },
   {
-    id: 4,
+    _id: 4444,
     category: Category.tablets,
     model: 'Lenovo Tab M10 (3rd Gen) Wi-Fi 4/64GB Storm Grey (ZAAE0027UA)',
     mainPhoto:
@@ -74,7 +74,7 @@ export const tablets = [
     ],
   },
   {
-    id: 5,
+    _id: 5,
     category: Category.tablets,
     model: 'Samsung Galaxy Tab S8 11" 8/128GB Wi-Fi Dark Grey (SM-X700NZAASEK)',
     mainPhoto:
@@ -92,7 +92,7 @@ export const tablets = [
     ],
   },
   {
-    id: 6,
+    _id: 6,
     category: Category.tablets,
     model: 'Apple iPad Pro 12.9" 128GB M2 Wi-Fi Space Gray (MNXP3) 2022',
     mainPhoto:
@@ -110,7 +110,7 @@ export const tablets = [
     ],
   },
   {
-    id: 7,
+    _id: 7,
     category: Category.tablets,
     model: 'Apple iPad mini 8.3" 64GB Wi-Fi Space Gray (MK7M3) 2021',
     mainPhoto:
@@ -128,7 +128,7 @@ export const tablets = [
     ],
   },
   {
-    id: 8,
+    _id: 8,
     category: Category.tablets,
     model: `Apple iPad Air 10.9'' 64GB Wi-Fi Space Grey (MM9C3) 2022`,
     mainPhoto:
@@ -146,7 +146,7 @@ export const tablets = [
     ],
   },
   {
-    id: 9,
+    _id: 9,
     category: Category.tablets,
     model: `Xiaomi Redmi Pad 3/64GB Moonlight Silver (VHU4206EU)`,
     mainPhoto:
@@ -164,7 +164,7 @@ export const tablets = [
     ],
   },
   {
-    id: 10,
+    _id: 10,
     category: Category.tablets,
     model: `https://i.citrus.world/imgcache/size_180/uploads/shop/2/c/2c4155ade72c352b2b522a9a157681ca.jpg`,
     mainPhoto:
@@ -182,7 +182,7 @@ export const tablets = [
     ],
   },
   {
-    id: 11,
+    _id: 11,
     category: Category.tablets,
     model: 'Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021',
     mainPhoto:
@@ -200,7 +200,7 @@ export const tablets = [
     ],
   },
   {
-    id: 12,
+    _id: 12,
     category: Category.tablets,
     model: 'Samsung Galaxy Tab А8 10.5" 4/64GB LTE Dark Grey (SM-X205NZAESEK)',
     mainPhoto:
@@ -218,7 +218,7 @@ export const tablets = [
     ],
   },
   {
-    id: 13,
+    _id: 13,
     category: Category.tablets,
     model: 'realme Pad 10.4" 4/64GB Wi-Fi (Grey)',
     mainPhoto:
@@ -236,7 +236,7 @@ export const tablets = [
     ],
   },
   {
-    id: 14,
+    _id: 14,
     category: Category.tablets,
     model: 'Lenovo Tab M10 (3rd Gen) Wi-Fi 4/64GB Storm Grey (ZAAE0027UA)',
     mainPhoto:
@@ -254,7 +254,7 @@ export const tablets = [
     ],
   },
   {
-    id: 15,
+    _id: 15,
     category: Category.tablets,
     model: 'Samsung Galaxy Tab S8 11" 8/128GB Wi-Fi Dark Grey (SM-X700NZAASEK)',
     mainPhoto:
@@ -272,7 +272,7 @@ export const tablets = [
     ],
   },
   {
-    id: 16,
+    _id: 16,
     category: Category.tablets,
     model: 'Apple iPad Pro 12.9" 128GB M2 Wi-Fi Space Gray (MNXP3) 2022',
     mainPhoto:
@@ -290,7 +290,7 @@ export const tablets = [
     ],
   },
   {
-    id: 17,
+    _id: 17,
     category: Category.tablets,
     model: 'Apple iPad mini 8.3" 64GB Wi-Fi Space Gray (MK7M3) 2021',
     mainPhoto:
@@ -308,7 +308,7 @@ export const tablets = [
     ],
   },
   {
-    id: 18,
+    _id: 18,
     category: Category.tablets,
     model: `Apple iPad Air 10.9'' 64GB Wi-Fi Space Grey (MM9C3) 2022`,
     mainPhoto:
@@ -326,7 +326,7 @@ export const tablets = [
     ],
   },
   {
-    id: 19,
+    _id: 19,
     category: Category.tablets,
     model: `Xiaomi Redmi Pad 3/64GB Moonlight Silver (VHU4206EU)`,
     mainPhoto:
@@ -344,7 +344,7 @@ export const tablets = [
     ],
   },
   {
-    id: 20,
+    _id: 20,
     category: Category.tablets,
     model: `Xiaomi Redmi Pad 3/64GB Moonlight Silver (VHU4206EU)`,
     mainPhoto:

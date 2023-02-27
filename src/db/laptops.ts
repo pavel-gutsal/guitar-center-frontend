@@ -2,7 +2,7 @@ import { Category, CatalogItem } from '../types';
 
 export const laptops = [
   {
-    id: 1,
+    _id: 1,
     category: Category.laptops,
     model: 'Lenovo IdeaPad 1 15IGL7 Cloud Grey (82V7003XRA)',
     mainPhoto:
@@ -20,7 +20,7 @@ export const laptops = [
     ],
   },
   {
-    id: 2,
+    _id: 2222,
     category: Category.laptops,
     model: 'Asus ROG Strix G15 G513IC-HN004 Eclipse Gray (90NR0502-M003L0)',
     mainPhoto:
@@ -38,7 +38,7 @@ export const laptops = [
     ],
   },
   {
-    id: 3,
+    _id: 3,
     category: Category.laptops,
     model: 'Apple MacBook Air M1 Chip 13"/256 (MGN63UA/A) Space Gray 2020',
     mainPhoto:
@@ -56,7 +56,7 @@ export const laptops = [
     ],
   },
   {
-    id: 33,
+    _id: 33,
     category: Category.laptops,
     model: 'Lenovo Legion 5 17ITH6H Phantom Blue (82JM0044RA)',
     mainPhoto:
@@ -74,7 +74,7 @@ export const laptops = [
     ],
   },
   {
-    id: 4,
+    _id: 4,
     category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506LHB-HN324 Bonfire Black (90NR03U2-M008H0)',
     mainPhoto:
@@ -92,7 +92,7 @@ export const laptops = [
     ],
   },
   {
-    id: 5,
+    _id: 5,
     category: Category.laptops,
     model: 'Asus X515EP-BQ658 Transparent Silver (90NB0TZ2-M00HY0)',
     mainPhoto:
@@ -110,7 +110,7 @@ export const laptops = [
     ],
   },
   {
-    id: 6,
+    _id: 6,
     category: Category.laptops,
     model: 'Lenovo IdeaPad Gaming 3 15IHU6 Shadow Black (82K101FKRA)',
     mainPhoto:
@@ -128,7 +128,7 @@ export const laptops = [
     ],
   },
   {
-    id: 7,
+    _id: 7,
     category: Category.laptops,
     model: 'Lenovo Legion 5 15IAH7H Storm Grey (82RB00QHRA)',
     mainPhoto:
@@ -146,7 +146,7 @@ export const laptops = [
     ],
   },
   {
-    id: 8,
+    _id: 8,
     category: Category.laptops,
     model: 'realme Book Prime 14 I5 16/512GB (Grey)',
     mainPhoto:
@@ -164,7 +164,7 @@ export const laptops = [
     ],
   },
   {
-    id: 9,
+    _id: 9,
     category: Category.laptops,
     model: 'Acer Aspire 7 A715-43G-R7M7 Charcoal Black (NH.QHDEU.006)',
     mainPhoto:
@@ -182,7 +182,7 @@ export const laptops = [
     ],
   },
   {
-    id: 10,
+    _id: 10,
     category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506HC-HN004 Black (90NR0724-M00NU0)',
     mainPhoto:
@@ -200,7 +200,7 @@ export const laptops = [
     ],
   },
   {
-    id: 11,
+    _id: 11,
     category: Category.laptops,
     model: 'Lenovo Legion 5 Pro 16ITH6H Stingray Stingray (82JD00FFRA)',
     mainPhoto:
@@ -218,7 +218,7 @@ export const laptops = [
     ],
   },
   {
-    id: 12,
+    _id: 12,
     category: Category.laptops,
     model: 'Asus TUF Gaming A17 FA706IC-HX001 Eclipse Gray (90NR0674-M008J0)',
     mainPhoto:
@@ -236,7 +236,7 @@ export const laptops = [
     ],
   },
   {
-    id: 13,
+    _id: 13,
     category: Category.laptops,
     model: 'Lenovo IdeaPad 1 15IGL7 Cloud Grey (82V7003XRA)',
     mainPhoto:
@@ -254,7 +254,7 @@ export const laptops = [
     ],
   },
   {
-    id: 14,
+    _id: 14,
     category: Category.laptops,
     model: 'Asus ROG Strix G15 G513IC-HN004 Eclipse Gray (90NR0502-M003L0)',
     mainPhoto:
@@ -272,7 +272,7 @@ export const laptops = [
     ],
   },
   {
-    id: 15,
+    _id: 15,
     category: Category.laptops,
     model: 'Apple MacBook Air M1 Chip 13"/256 (MGN63UA/A) Space Gray 2020',
     mainPhoto:
@@ -290,7 +290,7 @@ export const laptops = [
     ],
   },
   {
-    id: 16,
+    _id: 16,
     category: Category.laptops,
     model: 'Lenovo Legion 5 17ITH6H Phantom Blue (82JM0044RA)',
     mainPhoto:
@@ -308,7 +308,7 @@ export const laptops = [
     ],
   },
   {
-    id: 17,
+    _id: 17,
     category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506LHB-HN324 Bonfire Black (90NR03U2-M008H0)',
     mainPhoto:
@@ -326,7 +326,7 @@ export const laptops = [
     ],
   },
   {
-    id: 18,
+    _id: 18,
     category: Category.laptops,
     model: 'Asus X515EP-BQ658 Transparent Silver (90NB0TZ2-M00HY0)',
     mainPhoto:
@@ -344,7 +344,7 @@ export const laptops = [
     ],
   },
   {
-    id: 19,
+    _id: 19,
     category: Category.laptops,
     model: 'Lenovo IdeaPad Gaming 3 15IHU6 Shadow Black (82K101FKRA)',
     mainPhoto:
@@ -362,7 +362,7 @@ export const laptops = [
     ],
   },
   {
-    id: 20,
+    _id: 20,
     category: Category.laptops,
     model: 'Lenovo Legion 5 15IAH7H Storm Grey (82RB00QHRA)',
     mainPhoto:
@@ -380,7 +380,7 @@ export const laptops = [
     ],
   },
   {
-    id: 21,
+    _id: 21,
     category: Category.laptops,
     model: 'realme Book Prime 14 I5 16/512GB (Grey)',
     mainPhoto:
@@ -398,7 +398,7 @@ export const laptops = [
     ],
   },
   {
-    id: 22,
+    _id: 22,
     category: Category.laptops,
     model: 'Acer Aspire 7 A715-43G-R7M7 Charcoal Black (NH.QHDEU.006)',
     mainPhoto:
@@ -416,7 +416,7 @@ export const laptops = [
     ],
   },
   {
-    id: 23,
+    _id: 23,
     category: Category.laptops,
     model: 'Asus TUF Gaming F15 FX506HC-HN004 Black (90NR0724-M00NU0)',
     mainPhoto:
@@ -434,7 +434,7 @@ export const laptops = [
     ],
   },
   {
-    id: 24,
+    _id: 24,
     category: Category.laptops,
     model: 'Lenovo Legion 5 Pro 16ITH6H Stingray Stingray (82JD00FFRA)',
     mainPhoto:
@@ -452,7 +452,7 @@ export const laptops = [
     ],
   },
   {
-    id: 25,
+    _id: 25,
     category: Category.laptops,
     model: 'Asus TUF Gaming A17 FA706IC-HX001 Eclipse Gray (90NR0674-M008J0)',
     mainPhoto:

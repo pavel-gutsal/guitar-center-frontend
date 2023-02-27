@@ -25,12 +25,12 @@ export const BlockSelectBar = ({
   sortBy,
   setSortBy,
 }: Props) => {
-  const sortByHandler = (event: SelectChangeEvent<string>) => {
-    setSortBy(event.target.value);
+  const sortByHandler = (event: SelectChangeEvent) => {
+    setSortBy(event.target.value as SortBy);
     setPage(1);
   };
 
-  const cartsPerPageHandler = (event: SelectChangeEvent<Limit>) => {
+  const cartsPerPageHandler = (event: SelectChangeEvent) => {
     setLimit(Number(event.target.value));
     setPage(1);
   };
@@ -40,7 +40,7 @@ export const BlockSelectBar = ({
       <Box sx={{ minWidth: 170 }}>
         <FormControl fullWidth>
           <Select
-            value={sortBy}
+            value={String(sortBy)}
             onChange={sortByHandler}
             defaultValue={BlockSortBy.newest.value}
             sx={SBlockSelectSX}
@@ -58,7 +58,7 @@ export const BlockSelectBar = ({
       <Box sx={{ minWidth: 80 }}>
         <FormControl fullWidth>
           <Select
-            value={limit}
+            value={String(limit)}
             onChange={cartsPerPageHandler}
             defaultValue={String(CartsPerPage.SIXTEEN)}
             sx={SBlockSelectSX}

@@ -2,7 +2,7 @@ import { Category, CatalogItem } from '../types';
 
 export const phones = [
   {
-    id: 1,
+    _id: 1,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -21,7 +21,7 @@ export const phones = [
     ],
   },
   {
-    id: 2,
+    _id: 2,
     category: Category.phones,
     model: 'realme 10 4G 8/128GB (Rush Black)',
     mainPhoto:
@@ -40,7 +40,7 @@ export const phones = [
     ],
   },
   {
-    id: 3,
+    _id: 3333,
     category: Category.phones,
     model: 'OPPO A17k 3/64GB (Blue)',
     mainPhoto:
@@ -59,7 +59,7 @@ export const phones = [
     ],
   },
   {
-    id: 4,
+    _id: 4,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -78,7 +78,7 @@ export const phones = [
     ],
   },
   {
-    id: 5,
+    _id: 5,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -97,7 +97,7 @@ export const phones = [
     ],
   },
   {
-    id: 6,
+    _id: 6,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -116,7 +116,7 @@ export const phones = [
     ],
   },
   {
-    id: 7,
+    _id: 7,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -135,7 +135,7 @@ export const phones = [
     ],
   },
   {
-    id: 8,
+    _id: 8,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -154,7 +154,7 @@ export const phones = [
     ],
   },
   {
-    id: 9,
+    _id: 9,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -173,7 +173,7 @@ export const phones = [
     ],
   },
   {
-    id: 10,
+    _id: 10,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -192,7 +192,7 @@ export const phones = [
     ],
   },
   {
-    id: 11,
+    _id: 11,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -211,7 +211,7 @@ export const phones = [
     ],
   },
   {
-    id: 12,
+    _id: 12,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
@@ -230,7 +230,7 @@ export const phones = [
     ],
   },
   {
-    id: 13,
+    _id: 13,
     category: Category.phones,
     model: 'Samsung Galaxy A73 2022 A736B 8/256GB Gray (SM-A736BZAHSEK)',
     mainPhoto:
