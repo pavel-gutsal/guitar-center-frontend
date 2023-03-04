@@ -37,7 +37,7 @@ export const RouterBar = ({ category, model }: Props) => {
   };
 
   return (
-    <SRouterBar>
+    <SRouterBar id="Router__Bar__Top_Global">
       <BlockHomeButtonIcon onClick={navigateHome} />
       <ChevronRight />
       {category === Category.phones && (
