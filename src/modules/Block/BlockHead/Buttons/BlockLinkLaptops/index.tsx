@@ -1,9 +1,17 @@
 import '../BlockLinkPhones';
 import './BlockLinkLaptops.styles.css';
 
-export const BlockLinkLaptops = () => {
+interface Props {
+  onClick: () => void;
+}
+
+export const BlockLinkLaptops = ({ onClick }: Props) => {
   return (
-    <button type="button" className="BlockLinkItem BlockLinkLaptopButton">
+    <button
+      type="button"
+      className="BlockLinkItem BlockLinkLaptopButton"
+      onClick={onClick}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"

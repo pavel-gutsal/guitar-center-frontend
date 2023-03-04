@@ -20,6 +20,7 @@ export const SBlockSelectSX = {
   borderRadius: '7px',
   outline: 'none',
   color: '#575757',
+  backgroundColor: 'white',
 };
 
 export const SBlockMenuItemSX = {

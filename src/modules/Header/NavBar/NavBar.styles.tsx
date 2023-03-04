@@ -30,17 +30,17 @@ export const StyledLi = styled.li`
   height: 100%;
 `;
 
-export const Styledh3 = styled.h3`
-  color: ${colors.greyFont};
-  line-height: 60px;
-  transition: all 0.3s ease-in-out;
+// export const Styledh3 = styled.h3`
+//   color: ${colors.greyFont};
+//   line-height: 60px;
+//   transition: all 0.3s ease-in-out;
 
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    color: ${colors.blueHeighlight};
-  }
-`;
+//   &:hover,
+//   &:focus {
+//     cursor: pointer;
+//     color: ${colors.blueHeighlight};
+//   }
+// `;
 
 export const ButtonWideSX = {
   width: '120px',

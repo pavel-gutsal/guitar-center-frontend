@@ -1,10 +1,12 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { LoginForm } from '../components/LoginForm';
 import { SignupForm } from '../components/SignupForm';
 import { ROUTES } from '../constants';
 import { BasicLayout } from '../pages/BasicLayout';
 import { BlockContent } from '../pages/BlockContent';
 import { HomePage } from '../pages/HomePage';
+import { ProductPage } from '../pages/ProductPage';
+import { Category } from '../types';
 
 export const RouterContainer = () => {
   return (
@@ -12,12 +14,30 @@ export const RouterContainer = () => {
       <Route path="/" element={<BasicLayout />}>
         <Route index element={<HomePage />} />
         <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.PHONES} element={<BlockContent />} />
-        <Route path={ROUTES.TABLETS} element={<BlockContent />} />
-        <Route path={ROUTES.LAPTOPS} element={<BlockContent />} />
+        <Route path={ROUTES.PHONES}>
+          <Route index element={<BlockContent />} />
+          <Route
+            path={ROUTES.PHONE_PRODUCT}
+            element={<ProductPage category={Category.phones} />}
+          />
+        </Route>
+        <Route path={ROUTES.TABLETS}>
+          <Route index element={<BlockContent />} />
+          <Route
+            path={ROUTES.TABLETS_PRODUCT}
+            element={<ProductPage category={Category.tablets} />}
+          />
+        </Route>
+        <Route path={ROUTES.LAPTOPS}>
+          <Route index element={<BlockContent />} />
+          <Route
+            path={ROUTES.LAPTOPS_PRODUCT}
+            element={<ProductPage category={Category.laptops} />}
+          />
+        </Route>
         <Route path={ROUTES.LOGIN} element={<LoginForm />} />
         <Route path={ROUTES.SIGNUP} element={<SignupForm />} />
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
   );

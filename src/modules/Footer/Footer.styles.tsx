@@ -31,7 +31,7 @@ export const SBrandCurve = styled.div`
   align-items: flex-end;
   overflow: hidden;
   margin-bottom: -70px;
-  transform: translateY(-70px);
+  transform: translateY(-68px);
   position: relative;
 
   @media screen and ${devices.default} {
@@ -40,12 +40,10 @@ export const SBrandCurve = styled.div`
 
   @media screen and ${devices.netbook} {
     background: url(${IMAGES.CURVE.BRANDSCURVENETBOOK});
-    transform: translateY(-68px);
   }
 
   @media screen and ${devices.tabletS} {
     background: url(${IMAGES.CURVE.BRANDSCURVETABLETS});
-    transform: translateY(-68px);
   }
 
   @media screen and ${devices.mobileL} {
@@ -54,6 +52,5 @@ export const SBrandCurve = styled.div`
 
   @media screen and ${devices.mobileS} {
     background: url(${IMAGES.CURVE.BRANDSCURVEMOBILES});
-    transform: translateY(-70px);
   }
 `;

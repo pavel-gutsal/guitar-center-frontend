@@ -1,0 +1,131 @@
+.CartButtonAdd {
+  cursor: pointer;
+  border: 1px solid var(--brightOrange);
+  background: white;
+  color: var(--greyTextUnhighlighted);
+  fill: var(--greyTextUnhighlighted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.CartButtonAdd span {
+  font-size: 18px;
+}
+
+.CartButtonAdd:hover,
+.CartButtonAdd:focus {
+  background: var(--brightOrange);
+  color: white;
+  fill: white;
+}
+
+.AboutButtonBuy,
+.AboutButtonCredit {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--successGreen);
+  background: var(--successGreen);
+  color: white;
+  fill: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.AboutButtonBuy span,
+.AboutButtonCredit span {
+  font-size: 22px;
+}
+
+.AboutButtonBuy svg,
+.AboutButtonCredit svg {
+  transform: scale(1.2);
+}
+
+.AboutButtonBuy:focus,
+.AboutButtonBuy:hover {
+  background: var(--brightOrange);
+  border: 1px solid var(--brightOrange);
+}
+
+.AboutButtonCredit {
+  border: 1px solid var(--creditButton);
+  background: var(--creditButton);
+}
+
+.AboutButtonCredit:hover,
+.AboutButtonCredit:focus {
+  background: var(--creditButtonHighlight);
+  border: 1px solid var(--creditButtonHighlight);
+}
+
+@media screen and (max-width: 1440px) {
+  .AboutButtonBuy,
+  .AboutButtonCredit {
+    gap: 5px;
+  }
+
+  .AboutButtonBuy span,
+  .AboutButtonCredit span {
+    font-size: 18px;
+  }
+
+  .AboutButtonBuy svg,
+  .AboutButtonCredit svg {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .AboutButtonBuy span,
+  .AboutButtonCredit span {
+    font-size: 16px;
+  }
+
+  .AboutButtonBuy svg,
+  .AboutButtonCredit svg {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .CartButtonAdd {
+    gap: 10px;
+    border-radius: 5px;
+  }
+
+  .CartButtonAdd span {
+    font-size: 14px;
+  }
+
+  .AboutButtonCredit {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 470px) {
+  .CartButtonAdd {
+    gap: 8px;
+    border-radius: 5px;
+  }
+
+  .CartButtonAdd span {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .CartButtonAdd span {
+    display: none;
+  }
+}

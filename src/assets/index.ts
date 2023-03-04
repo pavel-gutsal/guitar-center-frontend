@@ -35,6 +35,14 @@ import BrandsCurveNetbook from './images/Curves/footer_greyNetbook.svg';
 import BrandsCurveTabletS from './images/Curves/footer_greyTabletS.svg';
 import BrandsCurveMobileL from './images/Curves/footer_greyMobileL.svg';
 import BrandsCurveMobileS from './images/Curves/footer_greyMobileS.svg';
+import Store from './images/Delivery/local_mall.svg';
+import Available from './images/Delivery/available.svg';
+import Expand from './images/Delivery/expand.svg';
+import LocalShipping from './images/Delivery/local_shipping.svg';
+import Map from './images/Delivery/map.svg';
+import Fedex from './images/Delivery/fedex.svg';
+import Gls from './images/Delivery/GLS.svg';
+import Ups from './images/Delivery/United_Parcel_Service.svg';
 
 export const IMAGES = {
   APPINFRAMESMALL: AppInFrameSmall,
@@ -81,5 +89,15 @@ export const IMAGES = {
     DOWNLOADAPPNETWORK: DownloadAppNetwork,
     DOWNLOADAPP: DownloadApp,
     DOWNLOADAPPLARGE: DownloadAppLarge,
+  },
+  DELIVERY: {
+    STORE: Store,
+    AVAILABLE: Available,
+    EXPAND: Expand,
+    LOCAL_SHIPPING: LocalShipping,
+    MAP: Map,
+    FEDEX: Fedex,
+    UPS: Ups,
+    GLS: Gls,
   },
 };

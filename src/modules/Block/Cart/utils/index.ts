@@ -3,3 +3,10 @@ export const nameNormalize = (modalName: string): string => {
 
   return modalName;
 };
+
+export const calculateDiscount = (
+  discountedPrice: number,
+  totalPrice: number
+): number => {
+  return Math.round(100 - (discountedPrice / totalPrice) * 100);
+};

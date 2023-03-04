@@ -17,16 +17,35 @@
   --darkHeader: #231f20;
   --blueHeighlight: #1787ff;
   --greyFont: #a6a5a5;
+  --deliveryGray: #d4d4d4;
+  --backgroundApp: #f3f3f3;
   --greyTextUnhighlighted: #484848;
   --brigthRed: #f94144;
   --pink: #ef476f;
-  --lightPink: #ff4d6d;
+  --lightPink: #ff6883;
   --darkOrange: #f3722c;
   --brightOrange: #f8961e;
   --saladGreen: #90be6d;
-  --successGreen: #43aa8b;
+  --successGreen: #43b02a;
+  --creditButton: #3e77aa;
+  --creditButtonHighlight: #4e98d9;
 }
 
-/* .MuiOutlinedInput-notchedOutline {
-  border-color: var(--brightOrange) !important;
-}  */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px var(--backgroundApp);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(210, 210, 210);
+  border-radius: 4px;
+}

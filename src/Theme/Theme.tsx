@@ -8,11 +8,6 @@ export const theme = {
     blockWidthLaptopS: '1030', // 250 * 4 + 10 * 3,
     blockWidthLaptopNetbook: '830', // 270 * 3 + 10 * 2,
   },
-
-  todoTable: {},
-
-  filter: {},
-
   netbook: '1500px',
   tablet: '800px',
   mobile: '500px',

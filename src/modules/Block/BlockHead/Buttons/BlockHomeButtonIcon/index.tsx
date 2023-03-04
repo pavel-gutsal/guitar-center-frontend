@@ -1,8 +1,12 @@
 import './BlockHomeButtonIcon.styles.css';
 
-export const BlockHomeButtonIcon = () => {
+interface Props {
+  onClick: () => void;
+}
+
+export const BlockHomeButtonIcon = ({ onClick }: Props) => {
   return (
-    <button type="button" className="BlockHomeButtonIcon">
+    <button type="button" className="BlockHomeButtonIcon" onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24"

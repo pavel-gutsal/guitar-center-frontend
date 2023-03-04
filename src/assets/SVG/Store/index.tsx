@@ -5,12 +5,12 @@ import './Store.styles.css';
 export const ButtonSX = {
   width: '60px',
   height: '60px',
-  'border-radius': '0',
-  'border-bottom': '3px solid #231f20',
+  borderRadius: '0',
+  borderBottom: '3px solid #231f20',
   transition: 'all 0.3s ease-in-out',
 
   '&:hover, &:focus': {
-    'border-bottom': '3px solid #1787ff',
+    borderBottom: '3px solid #1787ff',
   },
 
   [`@media ${devices.netbook}`]: {

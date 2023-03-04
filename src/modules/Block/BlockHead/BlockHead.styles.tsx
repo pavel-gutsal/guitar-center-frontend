@@ -4,19 +4,11 @@ import { devices } from '../../../Theme';
 export const SBlockHead = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  padding-top: 5px;
+  gap: 15px;
 
   @media screen and ${devices.netbook} {
-    gap: 20px;
+    gap: 10px;
   }
-`;
-
-export const SBlockRouter = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-  left: -10px;
 `;
 
 export const SBlockTitle = styled.h1`

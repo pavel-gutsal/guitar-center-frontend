@@ -20,17 +20,10 @@ import {
   SSpecificationDiv,
   SImageContainer,
 } from './Cart.styles';
-import { CartButtonBuy } from './Buttons/CartButtonBuy';
-import { CartButtonHeart } from './Buttons/CartButtonHeart';
-import { nameNormalize } from './utils';
+import { calculateDiscount, nameNormalize } from './utils';
 import { CatalogItem } from '../../../types';
-
-const calculateDiscount = (
-  discountedPrice: number,
-  totalPrice: number
-): number => {
-  return Math.round(100 - (discountedPrice / totalPrice) * 100);
-};
+import { ButtonBuy } from '../../../assets/SVG/ButtonBuy';
+import { CartButtonHeart } from '../../../assets/SVG/CartButtonHeart';
 
 interface Props {
   product: CatalogItem;
@@ -64,7 +57,7 @@ export const Cart = ({ product }: Props) => {
       <SRating>
         <Rating
           name="size-large"
-          value={rating}
+          value={Number(rating)}
           precision={0.1}
           sx={SRatingSX}
           readOnly
@@ -79,7 +72,7 @@ export const Cart = ({ product }: Props) => {
         )}
       </SPrice>
       <SButtonContainer>
-        <CartButtonBuy />
+        <ButtonBuy text="Add to Cart" />
         <CartButtonHeart />
       </SButtonContainer>
       <SSpecification>
