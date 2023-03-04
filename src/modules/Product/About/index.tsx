@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { SAbout, SDescriptionWrapper, SSpecsBlock } from './About.styles';
-import { database } from '../../../db';
 import { CarouselTablet } from './CarouselTablet';
 import { CarouselLaptop } from './CarouselLaptop';
 import { SpecsBriefIcon } from './SpecsBriefIcon';
@@ -13,8 +12,14 @@ import {
   initialise,
   erase,
 } from '../../../features/AboutCarousel/AboutCarouselReducer';
+import { CatalogItem, Product } from '../../../types';
 
-export const About = () => {
+interface Props {
+  briefData: CatalogItem;
+  expandedData: Product;
+}
+
+export const About = ({ briefData, expandedData }: Props) => {
   const dispatch = useAppDispatch();
 
   const [openModal, setOpenModal] = useState(false);
@@ -35,7 +40,7 @@ export const About = () => {
   };
 
   const initialiseCarousel = () => {
-    dispatch(initialise({ length: database.product[1].photos.length }));
+    dispatch(initialise({ length: expandedData.photos.length }));
   };
 
   const dismountCarousel = () => {
@@ -55,28 +60,25 @@ export const About = () => {
         openModal={openModal}
         closeModalHandler={closeModalHandler}
         closeModalAnimation={closeModalAnimation}
-        photos={database.product[1].photos}
+        photos={expandedData.photos}
       />
       <CarouselLaptop
-        photos={database.product[1].photos}
+        photos={expandedData.photos}
         openModalHandler={openModalHandler}
       />
       <SDescriptionWrapper>
         <CarouselTablet
-          photos={database.product[1].photos}
-          comments={database.product[1].comments}
-          data={database.laptops[0]}
+          photos={expandedData.photos}
+          comments={expandedData.comments}
+          data={briefData}
         />
-        <Payment
-          data={database.laptops[0]}
-          comments={database.product[1].comments}
-        />
+        <Payment data={briefData} comments={expandedData.comments} />
         <Delivery />
         <PaymentMethods />
         <SSpecsBlock>
           <SpecsBriefIcon
-            categoryProduct={database.product[1].category}
-            specsBriefIcon={database.product[1].specsBriefIcon}
+            categoryProduct={expandedData.category}
+            specsBriefIcon={expandedData.specsBriefIcon}
           />
         </SSpecsBlock>
       </SDescriptionWrapper>

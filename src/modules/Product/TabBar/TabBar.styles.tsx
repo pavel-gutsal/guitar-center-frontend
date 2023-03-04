@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Tab } from '../../../constants';
-import { colors, theme } from '../../../Theme';
+import { colors, devices, theme } from '../../../Theme';
 
 interface STabBarProps {
   shadow: boolean;
@@ -42,6 +42,20 @@ export const SSegemented = styled.div<SSegmentedProps>`
     }};
     background: linear-gradient(52deg, rgba(241, 121, 0, 1) 0%, #ffbc1e 100%);
     transition: all 0.3s ease-in-out;
+  }
+
+  @media screen and ${devices.tabletS} {
+    height: 48px;
+    width: 100%;
+
+    &::after {
+      width: calc(100% / 3);
+      left: ${({ tab }) => {
+        if (tab === Tab.ABOUT) return '0px';
+        if (tab === Tab.SPECIFICATION) return 'calc(100% / 3)';
+        return 'calc(100% / 3 * 2)';
+      }};
+    }
   }
 `;
 
@@ -103,5 +117,17 @@ export const SButton = styled.button`
     height: 500%;
     animation: ${appear};
     animation-duration: 0.7s;
+  }
+
+  @media screen and ${devices.mobileL} {
+    font-size: 14px;
+  }
+
+  @media screen and ${devices.mobileM} {
+    font-size: 13px;
+  }
+
+  @media screen and ${devices.mobileS} {
+    font-size: 12px;
   }
 `;

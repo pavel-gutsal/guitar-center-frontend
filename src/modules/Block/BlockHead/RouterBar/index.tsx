@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from '../../../../assets/SVG/ChevronRight';
-import { ROUTES } from '../../../../constants';
+import { ROUTES, SCROLL_ID } from '../../../../constants';
 import { Category } from '../../../../types';
 import { BlockHomeButtonIcon } from '../Buttons/BlockHomeButtonIcon';
 import { BlockLinkLaptops } from '../Buttons/BlockLinkLaptops';
@@ -37,7 +37,7 @@ export const RouterBar = ({ category, model }: Props) => {
   };
 
   return (
-    <SRouterBar id="Router__Bar__Top_Global">
+    <SRouterBar id={SCROLL_ID.PRODUCT_TAB}>
       <BlockHomeButtonIcon onClick={navigateHome} />
       <ChevronRight />
       {category === Category.phones && (

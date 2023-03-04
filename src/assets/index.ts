@@ -43,12 +43,14 @@ import Map from './images/Delivery/map.svg';
 import Fedex from './images/Delivery/fedex.svg';
 import Gls from './images/Delivery/GLS.svg';
 import Ups from './images/Delivery/United_Parcel_Service.svg';
+import Warning from './images/Warning.svg';
 
 export const IMAGES = {
   APPINFRAMESMALL: AppInFrameSmall,
   APPINFRAME: AppInFrame,
   GOOGLEPLAY: GooglePlay,
   APPLESTORE: AppleStore,
+  WARNING: Warning,
   CONTACTS: {
     TELEGRAM: Telegram,
     GMAIL: Gmail,

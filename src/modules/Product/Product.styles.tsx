@@ -8,4 +8,12 @@ export const SProduct = styled.div`
   @media screen and ${devices.laptop} {
     padding: 0 20px;
   }
+
+  @media screen and ${devices.netbookS} {
+    padding: 0 10px;
+  }
+
+  @media screen and ${devices.mobileS} {
+    padding: 0 5px;
+  }
 `;

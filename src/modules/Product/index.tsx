@@ -8,6 +8,7 @@ import { SProduct } from './Product.styles';
 import { Reviews } from './Reviews';
 import { Specs } from './Specs';
 import { TabBar } from './TabBar';
+import { database } from '../../db';
 
 interface Props {
   category: Category;
@@ -17,8 +18,6 @@ interface Props {
 export const Product = ({ category, model }: Props) => {
   const [tab, setTab] = useState(Tab.ABOUT);
   const [tabBarShadow, setTabBarShadow] = useState(false);
-
-  const switchTab = () => {};
 
   const distributeShadow = () => {
     if (window.scrollY >= 64) {
@@ -46,8 +45,18 @@ export const Product = ({ category, model }: Props) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {tab === Tab.ABOUT && <About />}
-          {tab === Tab.SPECIFICATION && <Specs />}
+          {tab === Tab.ABOUT && (
+            <About
+              briefData={database.laptops[0]}
+              expandedData={database.product[0]}
+            />
+          )}
+          {tab === Tab.SPECIFICATION && (
+            <Specs
+              briefData={database.laptops[0]}
+              expandedData={database.product[0]}
+            />
+          )}
           {tab === Tab.REVIEWS && <Reviews />}
         </motion.div>
       </AnimatePresence>

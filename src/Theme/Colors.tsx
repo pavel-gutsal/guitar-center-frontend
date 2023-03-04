@@ -1,5 +1,6 @@
 export const colors = {
   darkHeader: '#231f20',
+  fontSpecification: '#313131',
   blueHeighlight: '#1787ff',
   backgroundApp: '#f3f3f3',
   skeletonWhite: '#eeeeee',

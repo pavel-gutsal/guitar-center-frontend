@@ -1,4 +1,4 @@
-import { Tab } from '../../../constants';
+import { SCROLL_ID, Tab } from '../../../constants';
 import { STabBar, SSegemented, SButton } from './TabBar.styles';
 
 interface Props {
@@ -8,35 +8,24 @@ interface Props {
 }
 
 export const TabBar = ({ shadow, tab, setTab }: Props) => {
-  const routerBar = document.getElementById('Router__Bar__Top_Global');
+  const routerBar = document.getElementById(SCROLL_ID.PRODUCT_TAB);
+
+  const toggleTab = (selectedTab: Tab) => {
+    setTab(selectedTab);
+
+    if (routerBar) {
+      routerBar.scrollIntoView();
+    }
+  };
 
   return (
     <STabBar shadow={shadow}>
       <SSegemented tab={tab}>
-        <SButton
-          onClick={() => {
-            setTab(Tab.ABOUT);
-            routerBar.scrollIntoView();
-          }}
-        >
-          {Tab.ABOUT}
-        </SButton>
-        <SButton
-          onClick={() => {
-            setTab(Tab.SPECIFICATION);
-            routerBar.scrollIntoView();
-          }}
-        >
+        <SButton onClick={() => toggleTab(Tab.ABOUT)}>{Tab.ABOUT}</SButton>
+        <SButton onClick={() => toggleTab(Tab.SPECIFICATION)}>
           {Tab.SPECIFICATION}
         </SButton>
-        <SButton
-          onClick={() => {
-            setTab(Tab.REVIEWS);
-            routerBar.scrollIntoView();
-          }}
-        >
-          {Tab.REVIEWS}
-        </SButton>
+        <SButton onClick={() => toggleTab(Tab.REVIEWS)}>{Tab.REVIEWS}</SButton>
       </SSegemented>
     </STabBar>
   );

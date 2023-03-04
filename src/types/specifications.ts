@@ -18,3 +18,17 @@ export enum CategoryUpercase {
   tablet = 'Tablet',
   laptop = 'Laptop',
 }
+
+export interface Specification {
+  [key: string]: {
+    [key: string]: string;
+  };
+}
+
+export interface Product {
+  category: CategoryUpercase;
+  comments: number;
+  specsBriefIcon: SpecsBrief;
+  photos: string[];
+  specifications: Specification;
+}

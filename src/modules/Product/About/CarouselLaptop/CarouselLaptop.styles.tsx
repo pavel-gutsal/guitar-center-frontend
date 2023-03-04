@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices } from '../../../../Theme';
+import { devices, theme } from '../../../../Theme';
 
 export const SPhotoGallery = styled.div`
   background: #ffffff;
@@ -10,7 +10,7 @@ export const SPhotoGallery = styled.div`
   grid-template-columns: 84px 1fr;
   gap: 10px;
   position: sticky;
-  top: 137px;
+  top: ${theme.sizes.stickyAfterTabBarLaptop};
   align-self: start;
 
   @media screen and ${devices.netbookS} {
