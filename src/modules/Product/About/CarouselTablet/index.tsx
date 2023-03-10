@@ -143,7 +143,7 @@ export const CarouselTablet = ({ photos, data, comments }: Props) => {
 
   return (
     <SCarouselWrapper>
-      <STitle>{data.model}</STitle>
+      <STitle>{data.name}</STitle>
       <SCarousel>
         <SPhotoGallery>
           <SPhotoWrapper

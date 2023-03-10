@@ -11,6 +11,8 @@ import {
   SCloseButtonSX,
 } from './DrawBack.styles';
 import { ROUTES } from '../../../constants';
+import { useAppDispatch } from '../../../app/hooks';
+import { reset as catalogueQueryReset } from '../../../features/CatalogueQuery/CatalogueQueryReducer';
 
 interface Props {
   drawBarOpen: boolean;
@@ -19,6 +21,7 @@ interface Props {
 
 export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const toggleDrawBar = () => {
     setDrawBarOpen((prev) => !prev);
@@ -26,6 +29,7 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
 
   const navigateHandler = (path: string) => {
     navigate(path);
+    dispatch(catalogueQueryReset());
     setDrawBarOpen((prev) => !prev);
   };
 

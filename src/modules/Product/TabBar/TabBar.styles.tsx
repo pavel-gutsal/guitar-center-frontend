@@ -3,7 +3,7 @@ import { Tab } from '../../../constants';
 import { colors, devices, theme } from '../../../Theme';
 
 interface STabBarProps {
-  shadow: boolean;
+  shadow?: boolean;
 }
 
 export const STabBar = styled.div<STabBarProps>`
@@ -19,7 +19,7 @@ export const STabBar = styled.div<STabBarProps>`
 `;
 
 interface SSegmentedProps {
-  tab: Tab;
+  tab?: Tab;
 }
 
 export const SSegemented = styled.div<SSegmentedProps>`
@@ -65,11 +65,15 @@ const appear = keyframes`
 `;
 
 export const SButton = styled.button`
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   font-size: 16px;
   text-transform: uppercase;
-  background: white;
+  background: #ffffff;
   outline: none;
   border: none;
   position: relative;
@@ -129,5 +133,25 @@ export const SButton = styled.button`
 
   @media screen and ${devices.mobileS} {
     font-size: 12px;
+  }
+`;
+
+export const SReviewTag = styled.div`
+  display: flex;
+  font-size: 12px;
+  line-height: 12px;
+  color: white;
+  background: ${colors.successGreen};
+  padding: 3px 6px;
+  border-radius: 4px;
+
+  @media screen and ${devices.tabletS} {
+    font-size: 11px;
+  }
+
+  @media screen and ${devices.mobileL} {
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 3px;
   }
 `;

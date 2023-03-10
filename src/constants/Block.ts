@@ -1,3 +1,5 @@
+import { SelectOptions } from '../types';
+
 export const PATH = {
   SIGNUP: 'auth/signup',
   LOGIN: 'auth/signin',
@@ -21,7 +23,7 @@ export enum BlockSectionsContent {
   laptops = 'Laptops',
 }
 
-export const BlockSortBy = {
+export const BlockSortBy: SelectOptions = {
   popularity: {
     label: 'Popularity',
     value: 'bestSeller',
@@ -45,6 +47,25 @@ export const CartsPerPage = {
   SIXTEEN: 16,
   TWENTY_FOUR: 24,
   THIRTY_TWO: 32,
+};
+
+export const CartPerPage: SelectOptions = {
+  EIGHT: {
+    label: '8',
+    value: '8',
+  },
+  SIXTEEN: {
+    label: '16',
+    value: '16',
+  },
+  TWENTY_FOUR: {
+    label: '24',
+    value: '24',
+  },
+  THIRTY_TWO: {
+    label: '32',
+    value: '32',
+  },
 };
 
 export const SCROLL_ID = {

@@ -8,6 +8,7 @@ export interface CatalogItem {
   _id: number;
   category: Category;
   model: string;
+  name: string;
   mainPhoto: string;
   rating: number;
   totalPrice: number;
@@ -33,4 +34,11 @@ export enum SortBy {
   DISCOUNTEDPRICE = 'discountedPrice',
   POPULARITY = 'bestSeller',
   NEWEST = 'createdAt',
+}
+
+export interface SelectOptions {
+  [key: string]: {
+    label: string;
+    value: string;
+  };
 }

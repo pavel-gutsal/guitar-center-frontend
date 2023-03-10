@@ -8,15 +8,15 @@ export const SPaymentBar = styled.div`
   margin-top: 20px;
 
   @media screen and ${devices.laptop} {
-    grid-template-columns: 90px 140px 220px 40px;
+    grid-template-columns: 100px 140px 220px 40px;
   }
 
   @media screen and ${devices.laptopS} {
-    grid-template-columns: 80px 120px 200px 40px;
+    grid-template-columns: 100px 120px 200px 40px;
   }
 
   @media screen and ${devices.netbook} {
-    grid-template-columns: 80px 110px 180px 40px;
+    grid-template-columns: 100px 110px 180px 40px;
     gap: 15px;
   }
 
@@ -26,7 +26,7 @@ export const SPaymentBar = styled.div`
   }
 
   @media screen and ${devices.tabletS} {
-    grid-template-columns: 80px 1fr 1.6fr 40px;
+    grid-template-columns: 100px 1fr 1.6fr 40px;
     gap: 15px;
   }
 

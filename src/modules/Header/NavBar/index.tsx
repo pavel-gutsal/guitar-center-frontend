@@ -11,12 +11,20 @@ import {
   StyledUl,
   SLink,
 } from './NavBar.styles';
+import { reset } from '../../../features/CatalogueQuery/CatalogueQueryReducer';
+import { useAppDispatch } from '../../../app/hooks';
 
 interface Props {
   setDrawBarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const NavBar = ({ setDrawBarOpen }: Props) => {
+  const dispatch = useAppDispatch();
+
+  const catalogueQueryReset = () => {
+    dispatch(reset());
+  };
+
   const drawBarToggle = () => {
     setDrawBarOpen((prev) => !prev);
   };
@@ -27,26 +35,26 @@ export const NavBar = ({ setDrawBarOpen }: Props) => {
       <StyledNavbar>
         <StyledUl>
           <StyledLi>
-            <SLink to={ROUTES.HOME}>
+            <SLink to={ROUTES.HOME} onClick={catalogueQueryReset}>
               <Store />
             </SLink>
           </StyledLi>
           <StyledLi>
-            <SLink to={ROUTES.PHONES}>
+            <SLink to={ROUTES.PHONES} onClick={catalogueQueryReset}>
               <Button variant="text" sx={ButtonWideSX}>
                 Phones
               </Button>
             </SLink>
           </StyledLi>
           <StyledLi>
-            <SLink to={ROUTES.TABLETS}>
+            <SLink to={ROUTES.TABLETS} onClick={catalogueQueryReset}>
               <Button variant="text" sx={ButtonWideSX}>
                 Tablets
               </Button>
             </SLink>
           </StyledLi>
           <StyledLi>
-            <SLink to={ROUTES.LAPTOPS}>
+            <SLink to={ROUTES.LAPTOPS} onClick={catalogueQueryReset}>
               <Button variant="text" sx={ButtonWideSX}>
                 Laptops
               </Button>

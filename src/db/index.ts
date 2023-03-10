@@ -2,11 +2,11 @@
 import { laptops } from './laptops';
 import { phones } from './phones';
 import { tablets } from './tablets';
-import { product } from './product';
+import { productPhones } from './product-phone';
 
 export const database = {
   phones,
   tablets,
   laptops,
-  product,
+  productPhones,
 };

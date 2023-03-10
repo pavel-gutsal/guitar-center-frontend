@@ -1,4 +1,5 @@
 import { Rating } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import {
   SCart,
   SImage,
@@ -24,6 +25,7 @@ import { calculateDiscount, nameNormalize } from './utils';
 import { CatalogItem } from '../../../types';
 import { ButtonBuy } from '../../../assets/SVG/ButtonBuy';
 import { CartButtonHeart } from '../../../assets/SVG/CartButtonHeart';
+import { scrollToRouterTab } from '../../utils';
 
 interface Props {
   product: CatalogItem;
@@ -37,8 +39,16 @@ export const Cart = ({ product }: Props) => {
     mainPhoto,
     rating,
     model,
+    name,
     shortSpecs,
   } = product;
+
+  const navigate = useNavigate();
+
+  const productNavigationHandler = () => {
+    scrollToRouterTab({ block: 'end', inline: 'nearest' });
+    navigate(`${model}`);
+  };
 
   return (
     <SCart>
@@ -51,7 +61,7 @@ export const Cart = ({ product }: Props) => {
           )}%`}</SDiscountTag>
         )}
       </SCartTags>
-      <SImageContainer>
+      <SImageContainer type="button" onClick={productNavigationHandler}>
         <SImage src={mainPhoto} />
       </SImageContainer>
       <SRating>
@@ -64,7 +74,7 @@ export const Cart = ({ product }: Props) => {
         />
         <SRatingText>{rating}</SRatingText>
       </SRating>
-      <STitle>{nameNormalize(model)}</STitle>
+      <STitle onClick={productNavigationHandler}>{nameNormalize(name)}</STitle>
       <SPrice>
         <SPriceCurrent>{`$${discountedPrice}`}</SPriceCurrent>
         {discountedPrice < totalPrice && (

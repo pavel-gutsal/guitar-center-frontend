@@ -1,5 +1,5 @@
 import { IMAGES } from '../../../assets';
-import { CatalogItem, Product } from '../../../types';
+import { CatalogItem, Details } from '../../../types';
 import { BuyCard } from './BuyCard';
 import {
   SSpecs,
@@ -12,17 +12,17 @@ import { SpecsSubList } from './SpecsSubList';
 
 interface Props {
   briefData: CatalogItem;
-  expandedData: Product;
+  details: Details;
 }
 
-export const Specs = ({ briefData, expandedData }: Props) => {
+export const Specs = ({ briefData, details }: Props) => {
   return (
     <SSpecs>
       <SSpecsBody>
-        <STitle>{`Specifications of ${briefData.model}`}</STitle>
-        {expandedData &&
-          expandedData.specifications &&
-          Object.entries(expandedData.specifications).map(
+        <STitle>{`Specifications of ${briefData.name}`}</STitle>
+        {details &&
+          details.specifications &&
+          Object.entries(details.specifications).map(
             ([sectionTitle, content]) => (
               <SpecsSubList
                 key={sectionTitle}

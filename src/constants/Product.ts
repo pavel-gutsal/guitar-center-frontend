@@ -1,4 +1,5 @@
 import { IMAGES } from '../assets';
+import { SelectOptions } from '../types';
 
 export enum Tab {
   ABOUT = 'About',
@@ -149,3 +150,14 @@ export const deliveryServiceInfo = [
     price: 'from 1$',
   },
 ];
+
+export const ReviewSortBy: SelectOptions = {
+  LATEST: {
+    label: 'Last posted',
+    value: 'date',
+  },
+  RATING: {
+    label: 'Rating',
+    value: 'rating',
+  },
+};

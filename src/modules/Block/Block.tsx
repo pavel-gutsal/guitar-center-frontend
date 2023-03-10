@@ -1,21 +1,21 @@
-import { useState } from 'react';
 import { SBlock } from './Block.styles';
 import { CartContainer } from './CardContainer';
 import { BlockHead } from './BlockHead';
 import { BlockSelectBar } from './BlockHead/BlockSelectBar';
 import { BlockPagination } from './BlockPagination';
-import { Category, Limit, SortBy } from '../../types';
+import { Category } from '../../types';
 import { useGetCatalogue } from '../../services/catalogue.service';
 import { BlockSelectBarSkeleton } from './BlockHead/BlockSelectBarSkeleton';
+import { useAppSelector } from '../../app/hooks';
 
 interface Props {
   category: Category;
 }
 
 export const Block = ({ category }: Props) => {
-  const [sortBy, setSortBy] = useState<SortBy>(SortBy.NEWEST);
-  const [page, setPage] = useState<number>(1);
-  const [limit, setLimit] = useState<number>(Limit.SIXTEEN);
+  const { sortBy, page, limit } = useAppSelector(
+    (state) => state.catalogueQuery
+  );
 
   const {
     data: catalogue,
@@ -35,19 +35,14 @@ export const Block = ({ category }: Props) => {
       )}
       {catalogue && catalogue.length > 0 && (
         <>
-          <BlockSelectBar
-            limit={limit}
-            setLimit={setLimit}
-            setPage={setPage}
-            sortBy={sortBy}
-            setSortBy={setSortBy}
-          />
+          <BlockSelectBar limit={limit} sortBy={sortBy} />
           <CartContainer products={catalogue.array} />
-          <BlockPagination
-            page={page}
-            setPage={setPage}
-            pagesNumber={Math.ceil(catalogue.length / limit)}
-          />
+          {Math.ceil(catalogue.length / limit) > 1 && (
+            <BlockPagination
+              page={page}
+              pagesNumber={Math.ceil(catalogue.length / limit)}
+            />
+          )}
         </>
       )}
     </SBlock>

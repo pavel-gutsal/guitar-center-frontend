@@ -1,0 +1,132 @@
+export const REVIEW_TABLET = [
+  {
+    device: 'tablets',
+    author: 'Charlotte',
+    rating: 5,
+    message: `Mega good you can watch a movie on it that are nice and big because of the tablet great for gaming and drawing`,
+    pros: ['fast', 'cheap', 'big screen', 'camera'],
+    cons: ['sometimes a bit heavy'],
+  },
+  {
+    device: 'tablets',
+    author: 'Anne',
+    rating: 4.5,
+    message: `Finally a really big tablet! Works very nice and fast, but I still miss the book cover that I would highly recommend. The screen is really beautiful, nice sound and good video call quality. Very happy with it, glad I waited for the ultra.`,
+    pros: ['Mega big and beautiful screen', 'Large angle selfie camera'],
+    cons: ['A stand is required for ease of use'],
+  },
+  {
+    device: 'tablets',
+    author: 'Giovanni',
+    rating: 4,
+    message: `Beautiful tablet and a large screen. beautiful colours, brightness could be a little better, sometimes difficult to see in the open air or with reflections. Battery could last a little longer. Spen is great!`,
+    pros: ['Beautiful screen', 'fast processor', 'nice design'],
+    cons: ['battery doesnt last that long', 'not cheap'],
+  },
+  {
+    device: 'tablets',
+    author: 'Bart',
+    rating: 5,
+    message: `A beautiful large and clear screen and the laptop functions. It pleases because of the large and beautiful bright screen.`,
+    pros: [
+      'Beautiful big screen',
+      'Thin and relatively light in weight',
+      'Pricing',
+    ],
+    cons: [],
+  },
+  {
+    device: 'tablets',
+    author: 'Frank',
+    rating: 5,
+    message: `Fantastic screen for movies and also powerful enough for work.`,
+    pros: ['Handy for work', 'Fantastic tablet for watching movies'],
+    cons: ['Duration'],
+  },
+  {
+    device: 'tablets',
+    author: 'Jan',
+    rating: 3.5,
+    message: `Works very well, but the battery runs out quickly. And fairly fast, only with keyboard I have trouble with it works just differently than a PC.
+    But otherwise nothing but praise.`,
+    pros: [
+      'Nice app very clear',
+      'Big screen',
+      'Can enjoy hours during intensive use of long battery',
+    ],
+    cons: [
+      'Large but you know when buying of course',
+      'No fast charger included',
+    ],
+  },
+  {
+    device: 'tablets',
+    author: 'Erik',
+    rating: 4,
+    message: `Nice OLED screen, good for film, games and basically everything.
+    Use it daily, never had such a great tablet before,
+    highly recommended, at the price but worth every euro, so just buy ;)`,
+    pros: ['Thin', 'Speed', 'Beautiful Amoled screen'],
+    cons: ['Remains pricey', 'Bad WiFi reception.'],
+  },
+  {
+    device: 'tablets',
+    author: 'Jane',
+    rating: 4.5,
+    message: `Needed a new and bigger tablet to read music and take notes. This tablet is really good for that. It's especially nice that it comes with an s-pen, which works very well. To my surprise, it also turns out to be a lot of fun to draw digitally.`,
+    pros: ['Good battery life', 'Nice big screen', 'Charging time super fast'],
+    cons: [
+      'You have to buy the charger separately if you want to charge quickly',
+    ],
+  },
+  {
+    device: 'tablets',
+    author: 'Martin',
+    rating: 5,
+    message: `Nice tablet. With free keyboard, this one is yet to come. I think it makes the ease of use even more pleasant.`,
+    pros: ['long battery life', 'large screen', 'solid'],
+    cons: [
+      'Weighs quite a lot',
+      'Palm detection while writing hardly works anywhere',
+    ],
+  },
+  {
+    device: 'tablets',
+    author: 'Edwin',
+    rating: 5,
+    message: `I am very satisfied can't say anything negative.`,
+    pros: ['it is according to our expectations'],
+    cons: ['no negatives'],
+  },
+  {
+    device: 'tablets',
+    author: 'Miguel',
+    rating: 3.5,
+    message: `I mainly use the tablet as a laptop in combination with the keyboard cover and the s pen. All apps start smoothly and standard use of the office package is excellent.
+    The tablet easily lasts a full day with charge remaining for the evenings, as I use it.`,
+    pros: ['Fast charger with 45w charger goes very fast'],
+    cons: [
+      'Not possible to add accents to letters with keyboard cover',
+      'Resolution not adjustable',
+    ],
+  },
+  {
+    device: 'tablets',
+    author: 'Roy',
+    rating: 4.5,
+    message: `Looking for a digital notepad, but for the price and the possibilities, this is recommended. I use it as a digital notepad, with the pen you can easily make notes in One-note, which are then synchronized in the Cloud.`,
+    pros: ['Switching between apps is fast', 'Battery lasts a long time'],
+    cons: ['Image is not very sharp', 'Not yet discovered.'],
+  },
+  {
+    device: 'tablets',
+    author: 'Jolien',
+    rating: 4,
+    message: `Works perfectly and is certainly not a disappointment, highly recommended.`,
+    pros: ['Expansion via real memory card is great!', 'large storage'],
+    cons: [
+      'A bit heavy in the long run, but logical due to the large screen',
+      'No fast charger adapter included, but standard.',
+    ],
+  },
+];

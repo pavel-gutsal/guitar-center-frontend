@@ -12,14 +12,14 @@ import {
   initialise,
   erase,
 } from '../../../features/AboutCarousel/AboutCarouselReducer';
-import { CatalogItem, Product } from '../../../types';
+import { CatalogItem, Details } from '../../../types';
 
 interface Props {
   briefData: CatalogItem;
-  expandedData: Product;
+  details: Details;
 }
 
-export const About = ({ briefData, expandedData }: Props) => {
+export const About = ({ briefData, details }: Props) => {
   const dispatch = useAppDispatch();
 
   const [openModal, setOpenModal] = useState(false);
@@ -40,7 +40,7 @@ export const About = ({ briefData, expandedData }: Props) => {
   };
 
   const initialiseCarousel = () => {
-    dispatch(initialise({ length: expandedData.photos.length }));
+    dispatch(initialise({ length: details.photos.length }));
   };
 
   const dismountCarousel = () => {
@@ -60,25 +60,25 @@ export const About = ({ briefData, expandedData }: Props) => {
         openModal={openModal}
         closeModalHandler={closeModalHandler}
         closeModalAnimation={closeModalAnimation}
-        photos={expandedData.photos}
+        photos={details.photos}
       />
       <CarouselLaptop
-        photos={expandedData.photos}
+        photos={details.photos}
         openModalHandler={openModalHandler}
       />
       <SDescriptionWrapper>
         <CarouselTablet
-          photos={expandedData.photos}
-          comments={expandedData.comments}
+          photos={details.photos}
+          comments={details.comments}
           data={briefData}
         />
-        <Payment data={briefData} comments={expandedData.comments} />
+        <Payment data={briefData} comments={details.comments} />
         <Delivery />
         <PaymentMethods />
         <SSpecsBlock>
           <SpecsBriefIcon
-            categoryProduct={expandedData.category}
-            specsBriefIcon={expandedData.specsBriefIcon}
+            categoryProduct={details.category}
+            specsBriefIcon={details.specsBriefIcon}
           />
         </SSpecsBlock>
       </SDescriptionWrapper>

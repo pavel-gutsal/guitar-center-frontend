@@ -1,3 +1,3 @@
 export * from './registration';
 export * from './catalogue';
-export * from './specifications';
+export * from './product';

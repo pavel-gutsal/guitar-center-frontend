@@ -11,6 +11,7 @@ export const STotalPrice = styled.h3`
   font-size: 32px;
   font-weight: 600;
   color: #292929;
+  /* width: 100px; */
 
   &::after {
     content: ' $';

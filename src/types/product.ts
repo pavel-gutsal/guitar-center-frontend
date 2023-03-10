@@ -1,3 +1,5 @@
+import { CatalogItem } from './catalogue';
+
 export interface SpecsBrief {
   diagonal: string;
   memory?: string;
@@ -25,10 +27,18 @@ export interface Specification {
   };
 }
 
-export interface Product {
+export interface Details {
   category: CategoryUpercase;
+  model: string;
+  _id: string;
   comments: number;
   specsBriefIcon: SpecsBrief;
   photos: string[];
   specifications: Specification;
+}
+
+export interface Product {
+  item: CatalogItem | null;
+  details: Details | null;
+  error: string | null;
 }

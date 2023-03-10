@@ -1,23 +1,35 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { Tab } from '../../constants';
-import { Category } from '../../types';
+import { resetTab } from '../../features/Tab/TabReducer';
+import { CatalogItem, Category, Details } from '../../types';
 import { RouterBar } from '../Block/BlockHead/RouterBar';
 import { About } from './About';
 import { SProduct } from './Product.styles';
 import { Reviews } from './Reviews';
 import { Specs } from './Specs';
 import { TabBar } from './TabBar';
-import { database } from '../../db';
 
 interface Props {
   category: Category;
-  model: string | undefined;
+  item: CatalogItem;
+  details: Details;
 }
 
-export const Product = ({ category, model }: Props) => {
-  const [tab, setTab] = useState(Tab.ABOUT);
+export const Product = ({ category, item, details }: Props) => {
   const [tabBarShadow, setTabBarShadow] = useState(false);
+  const dispatch = useAppDispatch();
+  const { tab } = useAppSelector((state) => state.tab);
+
+  const resetTabHandler = () => {
+    dispatch(resetTab());
+  };
+
+  useEffect(() => {
+    return () => resetTabHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const distributeShadow = () => {
     if (window.scrollY >= 64) {
@@ -35,8 +47,8 @@ export const Product = ({ category, model }: Props) => {
 
   return (
     <SProduct>
-      <RouterBar category={category} model={model} />
-      <TabBar shadow={tabBarShadow} tab={tab} setTab={setTab} />
+      <RouterBar category={category} model={item.model} />
+      <TabBar shadow={tabBarShadow} tab={tab} reviewsCount={details.comments} />
       <AnimatePresence mode="wait">
         <motion.div
           key={tab || Tab.ABOUT}
@@ -45,19 +57,13 @@ export const Product = ({ category, model }: Props) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {tab === Tab.ABOUT && (
-            <About
-              briefData={database.laptops[0]}
-              expandedData={database.product[0]}
-            />
-          )}
+          {tab === Tab.ABOUT && <About briefData={item} details={details} />}
           {tab === Tab.SPECIFICATION && (
-            <Specs
-              briefData={database.laptops[0]}
-              expandedData={database.product[0]}
-            />
+            <Specs briefData={item} details={details} />
           )}
-          {tab === Tab.REVIEWS && <Reviews />}
+          {tab === Tab.REVIEWS && (
+            <Reviews briefData={item} limit={details.comments} />
+          )}
         </motion.div>
       </AnimatePresence>
     </SProduct>

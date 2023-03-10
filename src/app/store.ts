@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import aboutCarouselReducer from '../features/AboutCarousel/AboutCarouselReducer';
+import CatalogueQueryReducer from '../features/CatalogueQuery/CatalogueQueryReducer';
+import TabReducer from '../features/Tab/TabReducer';
 
 export const store = configureStore({
   reducer: {
     aboutCarousel: aboutCarouselReducer,
+    tab: TabReducer,
+    catalogueQuery: CatalogueQueryReducer,
   },
 });
 

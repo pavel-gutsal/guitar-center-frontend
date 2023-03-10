@@ -11,10 +11,10 @@ export const SRouterBar = styled.div`
 
 export const SModel = styled.h2`
   color: var(--greyTextUnhighlighted);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 14px;
   padding: 10px;
   padding-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;

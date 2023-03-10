@@ -44,6 +44,9 @@ import Fedex from './images/Delivery/fedex.svg';
 import Gls from './images/Delivery/GLS.svg';
 import Ups from './images/Delivery/United_Parcel_Service.svg';
 import Warning from './images/Warning.svg';
+import PersonIcon from './images/PersonIcon.svg';
+import Positive from './images/Positive.svg';
+import Negative from './images/Negative.svg';
 
 export const IMAGES = {
   APPINFRAMESMALL: AppInFrameSmall,
@@ -51,6 +54,9 @@ export const IMAGES = {
   GOOGLEPLAY: GooglePlay,
   APPLESTORE: AppleStore,
   WARNING: Warning,
+  PERSONICON: PersonIcon,
+  POSITIVE: Positive,
+  NEGATIVE: Negative,
   CONTACTS: {
     TELEGRAM: Telegram,
     GMAIL: Gmail,

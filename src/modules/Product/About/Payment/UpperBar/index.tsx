@@ -1,15 +1,14 @@
-import { Rating } from '@mui/material';
+import { useAppDispatch } from '../../../../../app/hooks';
 import { Comment } from '../../../../../assets/SVG/Comment';
-import { Correct } from '../../../../../assets/SVG/Correct';
-import { SRatingSX } from '../../../../Block/Cart/Cart.styles';
+import { Tab } from '../../../../../constants';
+import { changeTab } from '../../../../../features/Tab/TabReducer';
+import { scrollToRouterTab } from '../../../../utils';
+import { IsAvailableLabel } from '../IsAvailableLabel';
+import { RatingLabel } from '../RatingLabel';
 import {
-  SAvailable,
-  SAvailableText,
   SCommentText,
   SGroup,
   SHorizontalGroup,
-  SRating,
-  SRatingText,
   SReviews,
 } from './UpperBar.styles';
 
@@ -19,24 +18,20 @@ interface Props {
 }
 
 export const UpperBar = ({ rating, comments }: Props) => {
+  const dispatch = useAppDispatch();
+
+  const navigateToReview = () => {
+    dispatch(changeTab(Tab.REVIEWS));
+
+    scrollToRouterTab();
+  };
+
   return (
     <SHorizontalGroup>
-      <SAvailable>
-        <Correct />
-        <SAvailableText>Is avaialble</SAvailableText>
-      </SAvailable>
+      <IsAvailableLabel />
       <SGroup>
-        <SRating>
-          <Rating
-            name="size-large"
-            value={rating}
-            precision={0.1}
-            sx={SRatingSX}
-            readOnly
-          />
-          <SRatingText>{rating}</SRatingText>
-        </SRating>
-        <SReviews>
+        <RatingLabel rating={rating} />
+        <SReviews onClick={navigateToReview}>
           <Comment />
           <SCommentText>{`${comments} reviews`} </SCommentText>
         </SReviews>

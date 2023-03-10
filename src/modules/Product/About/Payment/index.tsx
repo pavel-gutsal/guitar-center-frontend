@@ -12,7 +12,7 @@ interface Props {
 export const Payment = ({ data, comments }: Props) => {
   return (
     <SPayment>
-      <STitle>{data.model}</STitle>
+      <STitle>{data.name}</STitle>
       <SUpperBarWrapper>
         <UpperBar rating={data.rating} comments={comments} />
       </SUpperBarWrapper>

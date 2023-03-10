@@ -1,15 +1,19 @@
 import Pagination from '@mui/material/Pagination';
+import { useAppDispatch } from '../../../app/hooks';
+import { dispatchPage } from '../../../features/CatalogueQuery/CatalogueQueryReducer';
 import { SBlockPagination } from './BlockPagination.styles';
 
 interface Props {
   page: number;
   pagesNumber: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const BlockPagination = ({ page, pagesNumber, setPage }: Props) => {
+export const BlockPagination = ({ page, pagesNumber }: Props) => {
+  const dispatch = useAppDispatch();
+
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    setPage(value);
+    dispatch(dispatchPage(value));
+    window.scrollTo(0, 0);
   };
 
   return (

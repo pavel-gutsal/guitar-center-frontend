@@ -1,21 +1,21 @@
-import { SCROLL_ID, Tab } from '../../../constants';
-import { STabBar, SSegemented, SButton } from './TabBar.styles';
+import { useAppDispatch } from '../../../app/hooks';
+import { Tab } from '../../../constants';
+import { changeTab } from '../../../features/Tab/TabReducer';
+import { scrollToRouterTab } from '../../utils';
+import { STabBar, SSegemented, SButton, SReviewTag } from './TabBar.styles';
 
 interface Props {
   shadow: boolean;
   tab: Tab;
-  setTab: React.Dispatch<React.SetStateAction<Tab>>;
+  reviewsCount: number;
 }
 
-export const TabBar = ({ shadow, tab, setTab }: Props) => {
-  const routerBar = document.getElementById(SCROLL_ID.PRODUCT_TAB);
+export const TabBar = ({ shadow, tab, reviewsCount }: Props) => {
+  const dispatch = useAppDispatch();
 
   const toggleTab = (selectedTab: Tab) => {
-    setTab(selectedTab);
-
-    if (routerBar) {
-      routerBar.scrollIntoView();
-    }
+    dispatch(changeTab(selectedTab));
+    scrollToRouterTab();
   };
 
   return (
@@ -25,7 +25,10 @@ export const TabBar = ({ shadow, tab, setTab }: Props) => {
         <SButton onClick={() => toggleTab(Tab.SPECIFICATION)}>
           {Tab.SPECIFICATION}
         </SButton>
-        <SButton onClick={() => toggleTab(Tab.REVIEWS)}>{Tab.REVIEWS}</SButton>
+        <SButton onClick={() => toggleTab(Tab.REVIEWS)}>
+          {Tab.REVIEWS}
+          <SReviewTag>{reviewsCount}</SReviewTag>
+        </SButton>
       </SSegemented>
     </STabBar>
   );

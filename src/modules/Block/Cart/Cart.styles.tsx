@@ -73,6 +73,7 @@ export const SImage = styled.img`
 `;
 
 export const STitle = styled.h3`
+  cursor: pointer;
   display: flex;
   height: 40px;
   margin: 10px 0;

@@ -5,6 +5,10 @@ export const SPhotoList = styled.div`
   flex-direction: column;
   gap: 8px;
   padding: 12px;
+  padding-right: 8px;
+  max-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 export const SThumbNailWrapper = styled.button`

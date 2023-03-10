@@ -1,82 +1,46 @@
-import Box from '@mui/material/Box/Box';
-import FormControl from '@mui/material/FormControl';
-import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { BlockSortBy, CartsPerPage } from '../../../../constants';
-import { Limit, SortBy } from '../../../../types';
+import { SelectChangeEvent } from '@mui/material/Select';
+import { useAppDispatch } from '../../../../app/hooks';
+import { BlockSortBy, CartPerPage } from '../../../../constants';
 import {
-  SBlockSelectBar,
-  SBlockSelectSX,
-  SBlockMenuItemSX,
-} from './BlockSelectBar.styles';
+  dispatchLimit,
+  dispatchSortBy,
+} from '../../../../features/CatalogueQuery/CatalogueQueryReducer';
+import { Limit, SortBy } from '../../../../types';
+import { SelectElement } from '../../SelectElement';
+import { SBlockSelectBar } from './BlockSelectBar.styles';
 
 interface Props {
   limit: Limit;
-  setLimit: React.Dispatch<React.SetStateAction<Limit>>;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
   sortBy: SortBy;
-  setSortBy: React.Dispatch<React.SetStateAction<SortBy>>;
 }
 
-export const BlockSelectBar = ({
-  limit,
-  setLimit,
-  setPage,
-  sortBy,
-  setSortBy,
-}: Props) => {
+export const BlockSelectBar = ({ limit, sortBy }: Props) => {
+  const dispatch = useAppDispatch();
+
   const sortByHandler = (event: SelectChangeEvent) => {
-    setSortBy(event.target.value as SortBy);
-    setPage(1);
+    dispatch(dispatchSortBy(event.target.value as SortBy));
   };
 
   const cartsPerPageHandler = (event: SelectChangeEvent) => {
-    setLimit(Number(event.target.value));
-    setPage(1);
+    dispatch(dispatchLimit(event.target.value as SortBy));
   };
 
   return (
     <SBlockSelectBar>
-      <Box sx={{ minWidth: 170 }}>
-        <FormControl fullWidth>
-          <Select
-            value={String(sortBy)}
-            onChange={sortByHandler}
-            defaultValue={BlockSortBy.newest.value}
-            sx={SBlockSelectSX}
-          >
-            {Object.values(BlockSortBy).map(({ label, value }) => {
-              return (
-                <MenuItem value={value} key={value} sx={SBlockMenuItemSX}>
-                  {label}
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
-      </Box>
-      <Box sx={{ minWidth: 80 }}>
-        <FormControl fullWidth>
-          <Select
-            value={String(limit)}
-            onChange={cartsPerPageHandler}
-            defaultValue={String(CartsPerPage.SIXTEEN)}
-            sx={SBlockSelectSX}
-          >
-            {Object.values(CartsPerPage).map((value) => {
-              return (
-                <MenuItem
-                  value={String(value)}
-                  key={value}
-                  sx={SBlockMenuItemSX}
-                >
-                  {value}
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
-      </Box>
+      <SelectElement
+        minWidth={170}
+        onChange={sortByHandler}
+        selectValue={String(sortBy)}
+        selectOptions={BlockSortBy}
+        defaultValue={BlockSortBy.newest.value}
+      />
+      <SelectElement
+        minWidth={80}
+        onChange={cartsPerPageHandler}
+        selectValue={String(limit)}
+        selectOptions={CartPerPage}
+        defaultValue={String(CartPerPage.SIXTEEN.value)}
+      />
     </SBlockSelectBar>
   );
 };
