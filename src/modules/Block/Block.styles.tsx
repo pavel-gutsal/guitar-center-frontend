@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import { devices, theme } from '../../Theme';
 
 export const SBlock = styled.div`
-  width: ${theme.sizes.blockWidthLaptop}px;
+  width: ${theme.sizes.blockWidthAboveDefault}px;
+
+  @media screen and ${devices.default} {
+    width: ${theme.sizes.blockWidthLaptop}px;
+  }
 
   @media screen and ${devices.laptopS} {
     width: ${theme.sizes.blockWidthLaptopS}px;

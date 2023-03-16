@@ -1,4 +1,4 @@
-import { Skeleton } from '@mui/lab';
+import Skeleton from '@mui/material/Skeleton';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Category } from '../../../types';
 import { RouterBar } from '../../Block/BlockHead/RouterBar';

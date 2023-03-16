@@ -11,8 +11,9 @@ import {
   SCloseButtonSX,
 } from './DrawBack.styles';
 import { ROUTES } from '../../../constants';
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { reset as catalogueQueryReset } from '../../../features/CatalogueQuery/CatalogueQueryReducer';
+import { useLogout } from '../../../hooks/useLogout.hook';
 
 interface Props {
   drawBarOpen: boolean;
@@ -22,6 +23,8 @@ interface Props {
 export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.auth);
+  const { logOut } = useLogout(user);
 
   const toggleDrawBar = () => {
     setDrawBarOpen((prev) => !prev);
@@ -85,6 +88,9 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
+              onClick={() => {
+                navigateHandler(ROUTES.CART);
+              }}
             >
               CART
             </Button>
@@ -94,6 +100,9 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
+              onClick={() => {
+                navigateHandler(ROUTES.LIKED);
+              }}
             >
               Liked
             </Button>
@@ -103,6 +112,7 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
+              onClick={logOut}
             >
               Logout
             </Button>

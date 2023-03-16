@@ -7,8 +7,13 @@ import Divider from '@mui/material/Divider';
 import Logout from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button } from '@mui/material';
+import { isNil } from 'lodash';
 import { ButtonSX } from '../IconBar/IconBar.styles';
 import { User } from '../../../assets/SVG/User';
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { modalHandle } from '../../../features/Auth/AuthReducer';
+import { SAttention } from './AccountMenu.styles';
+import { useLogout } from '../../../hooks/useLogout.hook';
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -16,12 +21,23 @@ export default function AccountMenu() {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.auth);
+  const { logOut } = useLogout(user);
+
+  const openModalHandler = () => {
+    dispatch(modalHandle(true));
+    document.body.style.overflowY = ' hidden';
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
     <>
       <Button variant="text" sx={ButtonSX} onClick={handleClick}>
+        {!user && <SAttention>!</SAttention>}
         <User />
       </Button>
       <Menu
@@ -59,28 +75,28 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar /> User
-        </MenuItem>
-        <Divider />
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <LoginIcon fontSize="small" />
-          </ListItemIcon>
-          Log in
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <LoginIcon fontSize="small" />
-          </ListItemIcon>
-          Sign up
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Log out
-        </MenuItem>
+        {!isNil(user) && (
+          <MenuItem onClick={handleClose}>
+            <Avatar /> {user}
+          </MenuItem>
+        )}
+        {!isNil(user) && <Divider />}
+        {isNil(user) && (
+          <MenuItem onClick={openModalHandler}>
+            <ListItemIcon>
+              <LoginIcon fontSize="small" />
+            </ListItemIcon>
+            register
+          </MenuItem>
+        )}
+        {!isNil(user) && (
+          <MenuItem onClick={logOut}>
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            Log out
+          </MenuItem>
+        )}
       </Menu>
     </>
   );

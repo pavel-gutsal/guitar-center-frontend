@@ -11,8 +11,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import SaveIcon from '@mui/icons-material/Save';
-import { SignupFormSchema } from '../../schemas/form.schemas';
-import { useSignup } from '../../services/registration.service';
+import { SignupFormSchema } from '../../../schemas/form.schemas';
+import { useSignup } from '../../../services/registration.service';
 import styles from './SignupFrom.module.css';
 
 export const SignupForm = () => {
@@ -70,7 +70,7 @@ export const SignupForm = () => {
       innerRef={formicRef}
       initialValues={initState}
       validationSchema={SignupFormSchema}
-      onSubmit={async (values, actions) => {
+      onSubmit={async (values) => {
         const { name, email, password } = values;
         await signup({ name, email, password });
       }}

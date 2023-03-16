@@ -36,7 +36,7 @@ export const About = ({ briefData, details }: Props) => {
 
   const openModalHandler = () => {
     setOpenModal(true);
-    document.body.style.overflowY = ' hidden';
+    document.body.style.overflowY = 'hidden';
   };
 
   const initialiseCarousel = () => {

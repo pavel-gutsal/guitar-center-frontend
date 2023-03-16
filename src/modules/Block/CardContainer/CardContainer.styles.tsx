@@ -3,17 +3,25 @@ import { devices, theme } from '../../../Theme';
 
 interface SCartContainerProps {
   cartsNumber: number;
+  paddingTop?: string;
 }
 
 export const SCartContainer = styled.div<SCartContainerProps>`
   width: 100%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4, ${theme.sizes.cardWidthLaptop}px);
+  grid-template-columns: repeat(5, ${theme.sizes.cardWidthLaptop}px);
   grid-template-rows: ${({ cartsNumber }) =>
-    `repeat(${Math.ceil(cartsNumber / 4)}, 442px)`};
+    `repeat(${Math.ceil(cartsNumber / 5)}, 442px)`};
   gap: 10px;
   padding-bottom: 20px;
+  padding-top: ${({ paddingTop }) => paddingTop ?? '0px'};
+
+  @media screen and ${devices.default} {
+    grid-template-columns: repeat(4, ${theme.sizes.cardWidthLaptop}px);
+    grid-template-rows: ${({ cartsNumber }) =>
+      `repeat(${Math.ceil(cartsNumber / 4)}, 442px)`};
+  }
 
   @media screen and ${devices.laptopS} {
     grid-template-columns: repeat(4, ${theme.sizes.cardWidthLaptopS}px);

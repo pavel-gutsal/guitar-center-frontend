@@ -3,7 +3,9 @@ import { ChevronRight } from '../../../../assets/SVG/ChevronRight';
 import { ROUTES, SCROLL_ID } from '../../../../constants';
 import { Category } from '../../../../types';
 import { BlockHomeButtonIcon } from '../Buttons/BlockHomeButtonIcon';
+import { BlockLinkCart } from '../Buttons/BlockLinkCart';
 import { BlockLinkLaptops } from '../Buttons/BlockLinkLaptops';
+import { BlockLinkLiked } from '../Buttons/BlockLinkLiked';
 import { BlockLinkPhones } from '../Buttons/BlockLinkPhones';
 import { BlockLinkTablet } from '../Buttons/BlockLinkTablet';
 import { SModel, SRouterBar } from './RouterBar.styles';
@@ -31,6 +33,12 @@ export const RouterBar = ({ category, model }: Props) => {
       case Category.laptops:
         navigate(ROUTES.LAPTOPS);
         break;
+      case Category.liked:
+        navigate(ROUTES.LIKED);
+        break;
+      case Category.cart:
+        navigate(ROUTES.CART);
+        break;
       default:
         break;
     }
@@ -48,6 +56,12 @@ export const RouterBar = ({ category, model }: Props) => {
       )}
       {category === Category.laptops && (
         <BlockLinkLaptops onClick={navigateCategory} />
+      )}
+      {category === Category.liked && (
+        <BlockLinkLiked onClick={navigateCategory} />
+      )}
+      {category === Category.cart && (
+        <BlockLinkCart onClick={navigateCategory} />
       )}
       {model && (
         <>

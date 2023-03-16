@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Footer } from '../../modules/Footer';
 import { Header } from '../../modules/Header';
+import { Auth } from '../../modules/Auth';
 
 export const BasicLayout = () => {
   const location = useLocation();
@@ -13,6 +14,7 @@ export const BasicLayout = () => {
   return (
     <>
       <Header />
+      <Auth />
       <motion.div
         key={location.pathname}
         initial={{ opacity: 0 }}

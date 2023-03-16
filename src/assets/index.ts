@@ -47,6 +47,12 @@ import Warning from './images/Warning.svg';
 import PersonIcon from './images/PersonIcon.svg';
 import Positive from './images/Positive.svg';
 import Negative from './images/Negative.svg';
+import IphoneCrown from './modalCrown/iphone.png';
+import SamsungCrown from './modalCrown/samsung.png';
+import LaptopLeft from './modalCrown/laptopLeft.png';
+import LaptopRight from './modalCrown/laptopRight.png';
+import EmptyList from './empty-notFound/empty-list.png';
+import EmptyCart from './empty-notFound/empty-cart.png';
 
 export const IMAGES = {
   APPINFRAMESMALL: AppInFrameSmall,
@@ -107,5 +113,15 @@ export const IMAGES = {
     FEDEX: Fedex,
     UPS: Ups,
     GLS: Gls,
+  },
+  MODALCRAWN: {
+    IPHONE: IphoneCrown,
+    SAMSUNG: SamsungCrown,
+    LAPTOP_LEFT: LaptopLeft,
+    LAPTOP_RIGHT: LaptopRight,
+  },
+  EMPTY_NOTFOUND: {
+    EMPTY_LIST: EmptyList,
+    EMPTY_CART: EmptyCart,
   },
 };

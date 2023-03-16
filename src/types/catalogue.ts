@@ -2,6 +2,8 @@ export enum Category {
   phones = 'phones',
   tablets = 'tablets',
   laptops = 'laptops',
+  liked = 'liked',
+  cart = 'cart',
 }
 
 export interface CatalogItem {
@@ -15,6 +17,17 @@ export interface CatalogItem {
   discountedPrice: number;
   bestSeller: boolean;
   shortSpecs: string[][];
+}
+
+export interface ShoppintCard {
+  number: number;
+  name: string;
+  details: CatalogItem | undefined;
+}
+
+export interface ModifiedCatalogItem extends CatalogItem {
+  liked: boolean;
+  inCart: boolean;
 }
 
 export interface Catalogue {
@@ -41,4 +54,9 @@ export interface SelectOptions {
     label: string;
     value: string;
   };
+}
+
+export enum ModifyOption {
+  INCART = 'inCart',
+  ISLIKED = 'isLiked',
 }

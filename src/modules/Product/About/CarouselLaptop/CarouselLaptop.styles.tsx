@@ -13,6 +13,10 @@ export const SPhotoGallery = styled.div`
   top: ${theme.sizes.stickyAfterTabBarLaptop};
   align-self: start;
 
+  @media screen and (min-width: 2000px) {
+    height: 1050px;
+  }
+
   @media screen and ${devices.netbookS} {
     display: none;
   }
@@ -35,11 +39,16 @@ interface SPhotoMainProps {
 export const SPhotoMain = styled.div<SPhotoMainProps>`
   width: 100%;
   heigth: 100%;
+  max-height: calc(100vh - 160px);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: ${({ position }) => `calc(100% * ${position} * 1.2)`};
   transition: none;
+
+  @media screen and (min-width: 2000px) {
+    max-height: 700px;
+  }
 `;
 
 export const SPhoto = styled.img`
@@ -47,6 +56,10 @@ export const SPhoto = styled.img`
   height: 100%;
   width: 100%;
   max-width: 100%;
-  max-height: calc(100vh - 160px);
+  max-height: calc(100vh - 250px);
   cursor: pointer;
+
+  @media screen and (min-width: 2000px) {
+    max-height: 700px;
+  }
 `;

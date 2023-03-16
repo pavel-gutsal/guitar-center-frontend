@@ -1,13 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import aboutCarouselReducer from '../features/AboutCarousel/AboutCarouselReducer';
+import AuthReducer from '../features/Auth/AuthReducer';
 import CatalogueQueryReducer from '../features/CatalogueQuery/CatalogueQueryReducer';
 import TabReducer from '../features/Tab/TabReducer';
+import UserCartReducer from '../features/userCart/UserCartReducer';
 
 export const store = configureStore({
   reducer: {
     aboutCarousel: aboutCarouselReducer,
     tab: TabReducer,
     catalogueQuery: CatalogueQueryReducer,
+    auth: AuthReducer,
+    userCart: UserCartReducer,
   },
 });
 

@@ -129,3 +129,19 @@
     display: none;
   }
 }
+
+.inCart,
+.inCart{
+  background: white;
+  color: var(--successGreen);
+  fill: var(--successGreen);
+  border: 1px solid var(--successGreen);
+}
+
+.inCart:hover,
+.inCart:focus {
+  background: var(--successGreen);
+  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
+  border: 1px solid var(--successGreen);
+}

@@ -14,8 +14,6 @@ export const tabSlice = createSlice({
   initialState,
   reducers: {
     changeTab: (state, action) => {
-      console.log(action.payload);
-
       state.tab = action.payload;
     },
     resetTab: (state) => {

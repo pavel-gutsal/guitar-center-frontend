@@ -14,7 +14,7 @@ export const SBackground = styled.div<SBackgroundProps>`
   height: 100vh;
   background-color: rgba(80, 80, 80, 0.3);
   backdrop-filter: blur(10px);
-  z-index: 1;
+  z-index: 11;
   transition: opacity 0.4s ease-in-out;
 `;
 
@@ -33,7 +33,7 @@ export const SDrawBar = styled.div<SDrawBarProps>`
   flex-direction: column;
   padding-top: 20px;
   align-items: flex-end;
-  z-index: 2;
+  z-index: 12;
   transition: all 0.4s ease-in-out;
 
   @media screen and (max-width: ${theme.mobile}) {

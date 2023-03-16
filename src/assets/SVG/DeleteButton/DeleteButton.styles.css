@@ -1,0 +1,22 @@
+.DeleteButton {
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  /* transform: translateX(5px) translateY(-10px); */
+}
+
+.DeleteButton svg {
+  fill: rgb(186, 186, 186);
+  transition: all 0.3s ease-in-out;
+}
+
+.DeleteButton:hover svg,
+.DeleteButton:focus svg {
+  fill: rgb(255, 133, 133);
+  transform: scale(1.05);
+}

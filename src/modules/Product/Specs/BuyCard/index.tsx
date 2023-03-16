@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { CatalogItem } from '../../../../types';
 import {
   SBuyCard,
@@ -18,6 +19,9 @@ import { CashBack } from '../../../../assets/SVG/CashBack';
 import { IsAvailableLabel } from '../../About/Payment/IsAvailableLabel';
 import { RatingLabel } from '../../About/Payment/RatingLabel';
 import { DiscountLabel } from '../../About/Payment/DiscountLabel';
+import { useInCart } from '../../../../hooks/useInCart.hook';
+import { useBuyBotton } from '../../../../hooks/useBuyBotton.hook';
+import { ROUTES } from '../../../../constants';
 
 interface Props {
   briefData: CatalogItem;
@@ -25,6 +29,18 @@ interface Props {
 }
 
 export const BuyCard = ({ briefData, compact }: Props) => {
+  const { onHeartClick, onBuyClick, updateUserCartLoading } = useBuyBotton();
+  const { inCart, liked } = useInCart(briefData);
+  const navigate = useNavigate();
+
+  const buyClick = () => {
+    if (inCart) {
+      navigate(ROUTES.CART);
+    } else {
+      onBuyClick(briefData.model);
+    }
+  };
+
   return (
     <SBuyCard>
       {compact ? (
@@ -53,10 +69,18 @@ export const BuyCard = ({ briefData, compact }: Props) => {
           discountedPrice={briefData.discountedPrice}
           totalPrice={briefData.totalPrice}
         />
-        <CartButtonHeart theme="rounded" />
+        <CartButtonHeart
+          theme="rounded"
+          onClick={() => onHeartClick(briefData.model)}
+          liked={liked}
+        />
       </SGroup>
       <SButtonBuyWrapper>
-        <ButtonBuy text="Buy" theme="green" />
+        <ButtonBuy
+          text={inCart ? 'In Cart' : 'Buy'}
+          theme="green"
+          onClick={buyClick}
+        />
       </SButtonBuyWrapper>
       <SGroupCompact compact={compact}>
         <SCashBack compact={compact}>

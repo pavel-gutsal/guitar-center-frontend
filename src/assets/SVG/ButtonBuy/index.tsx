@@ -4,17 +4,29 @@ import './ButtonBuy.styles.css';
 interface Props {
   text?: string;
   theme?: string;
+  onClick?: () => void;
+  inCart?: boolean;
+  disabled?: boolean;
 }
 
-export const ButtonBuy = ({ text, theme }: Props) => {
+export const ButtonBuy = ({
+  text,
+  theme,
+  onClick,
+  inCart,
+  disabled,
+}: Props) => {
   return (
     <button
       type="button"
       className={classNames(
         { CartButtonAdd: !theme },
         { AboutButtonBuy: theme === 'green' },
-        { AboutButtonCredit: theme === 'blue' }
+        { AboutButtonCredit: theme === 'blue' },
+        { inCart }
       )}
+      onClick={onClick}
+      disabled={disabled}
     >
       <span>{text}</span>
       <svg

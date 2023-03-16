@@ -1,8 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import { LoginForm } from '../components/LoginForm';
-import { SignupForm } from '../components/SignupForm';
 import { ROUTES } from '../constants';
+import { ShoppingCart } from '../modules/ShoppingCart/ShoppingCart';
+import { Liked } from '../modules/Liked';
 import { BasicLayout } from '../pages/BasicLayout';
 import { BlockContent } from '../pages/BlockContent';
 import { HomePage } from '../pages/HomePage';
@@ -38,8 +38,20 @@ export const RouterContainer = () => {
               element={<ProductPage category={Category.laptops} />}
             />
           </Route>
-          <Route path={ROUTES.LOGIN} element={<LoginForm />} />
-          <Route path={ROUTES.SIGNUP} element={<SignupForm />} />
+          <Route path={ROUTES.LIKED}>
+            <Route index element={<Liked />} />
+            <Route
+              path={ROUTES.LIKED_MODEL}
+              element={<ProductPage category={Category.liked} />}
+            />
+          </Route>
+          <Route path={ROUTES.CART}>
+            <Route index element={<ShoppingCart />} />
+            <Route
+              path={ROUTES.CART_MODEL}
+              element={<ProductPage category={Category.cart} />}
+            />
+          </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

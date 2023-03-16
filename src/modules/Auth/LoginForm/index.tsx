@@ -11,8 +11,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import SaveIcon from '@mui/icons-material/Save';
-import { LoginFormSchema } from '../../schemas/form.schemas';
-import { useLogin } from '../../services/registration.service';
+import { LoginFormSchema } from '../../../schemas/form.schemas';
+import { useLogin } from '../../../services/registration.service';
 import styles from '../SignupForm/SignupFrom.module.css';
 
 export const LoginForm = () => {
@@ -71,7 +71,7 @@ export const LoginForm = () => {
       innerRef={formicRef}
       initialValues={initState}
       validationSchema={LoginFormSchema}
-      onSubmit={async (values, actions) => {
+      onSubmit={async (values) => {
         const { email, password } = values;
         await login({ email, password });
       }}
