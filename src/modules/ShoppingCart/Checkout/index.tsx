@@ -24,10 +24,14 @@ const calculateTotalPrice = (normilizedList: ShoppintCard[] | undefined) => {
 interface Props {
   normilizedList: ShoppintCard[] | undefined;
   fadeOut: boolean;
+  checkoutHandler: () => void;
 }
 
-export const Checkout = ({ normilizedList, fadeOut }: Props) => {
-
+export const Checkout = ({
+  normilizedList,
+  fadeOut,
+  checkoutHandler,
+}: Props) => {
   return (
     <SCheckout fadeOut={fadeOut}>
       <SProductPrice>
@@ -48,7 +52,7 @@ export const Checkout = ({ normilizedList, fadeOut }: Props) => {
           <span>{`${calculateTotalPrice(normilizedList)} $`}</span>
         </STotalPrice>
       </SProductPrice>
-      <SProceedButton onClick={() => {}}>Proceed</SProceedButton>
+      <SProceedButton onClick={checkoutHandler}>Proceed</SProceedButton>
     </SCheckout>
   );
 };

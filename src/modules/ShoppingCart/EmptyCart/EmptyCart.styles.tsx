@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { devices } from '../../../Theme';
-import { SEmptyWishList, SText, SLink } from '../../Liked/Liked.style';
+import {
+  SEmptyWishList,
+  SLink,
+  SText,
+} from '../../Liked/EmptyWishList/EmptyWishList.styles';
 
 export const SEmptyCart = styled(SEmptyWishList)`
   background: #efe3fe;

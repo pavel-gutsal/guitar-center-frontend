@@ -43,7 +43,7 @@ export const Card = ({
   const deleteAnimationHandler = () => {
     setDeleted(true);
     setTimeout(() => {
-      deleteHandler(cart.name);
+      deleteHandler(cart.model);
     }, 400);
   };
 
@@ -59,7 +59,7 @@ export const Card = ({
         <SHorizontalGroup>
           <SNumberGroup>
             <SButtonNumber
-              disabled={cart.number === 0}
+              disabled={cart.number <= 1}
               onClick={() => decreaseNumberHandler(cart)}
             >
               -

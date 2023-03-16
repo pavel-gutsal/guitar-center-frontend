@@ -16,17 +16,9 @@ import { Cart } from '../Block/Cart';
 import { CartSceleton } from '../Block/CartSceleton';
 import { normalizeCatalogue } from '../Block/utils';
 import { useUpdateUserCart } from '../../services/userCart.service';
-import {
-  SCartWrapper,
-  SEmptyWishList,
-  SImage,
-  SLiked,
-  SLink,
-  SText,
-} from './Liked.style';
-import { IMAGES } from '../../assets';
-import { ROUTES } from '../../constants';
+import { SCartWrapper, SLiked } from './Liked.style';
 import { modalHandle } from '../../features/Auth/AuthReducer';
+import { EmptyWishList } from './EmptyWishList';
 
 export const Liked = () => {
   const [emptyPage, setEmptyPage] = useState(false);
@@ -126,11 +118,7 @@ export const Liked = () => {
             </SCartContainer>
           )}
           {userCartExist && likedArray && likedArray.length === 0 && (
-            <SEmptyWishList>
-              <SImage src={IMAGES.EMPTY_NOTFOUND.EMPTY_LIST} />
-              <SText>It seems your Wish List is empty</SText>
-              <SLink to={ROUTES.PHONES}>Back to Products</SLink>
-            </SEmptyWishList>
+            <EmptyWishList />
           )}
         </SBlock>
       </SBlockContainer>

@@ -32,7 +32,7 @@ export const normalizeCatalogue = ({
     }
 
     if (userCartExist && cartArray && cartArray.length > 0) {
-      inCart = cartArray.some((el) => el.name === cart.model);
+      inCart = cartArray.some((el) => el.model === cart.model);
     }
 
     return { ...cart, liked, inCart };

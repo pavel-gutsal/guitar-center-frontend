@@ -14,6 +14,7 @@ import { ROUTES } from '../../../constants';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { reset as catalogueQueryReset } from '../../../features/CatalogueQuery/CatalogueQueryReducer';
 import { useLogout } from '../../../hooks/useLogout.hook';
+import { useLikedCartRoute } from '../../../hooks/useLikeCartRoute.hook';
 
 interface Props {
   drawBarOpen: boolean;
@@ -25,6 +26,7 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.auth);
   const { logOut } = useLogout(user);
+  const { likedSectionNavigate, inCartSectionNavigate } = useLikedCartRoute();
 
   const toggleDrawBar = () => {
     setDrawBarOpen((prev) => !prev);
@@ -88,9 +90,7 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
-              onClick={() => {
-                navigateHandler(ROUTES.CART);
-              }}
+              onClick={inCartSectionNavigate}
             >
               CART
             </Button>
@@ -100,9 +100,7 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               variant="text"
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
-              onClick={() => {
-                navigateHandler(ROUTES.LIKED);
-              }}
+              onClick={likedSectionNavigate}
             >
               Liked
             </Button>

@@ -23,11 +23,6 @@ export interface ServerError {
   };
 }
 
-// export interface CheckoutProduct {
-//   model: string;
-//   number: number;
-// }
-
 export interface Cart {
   model: string;
   number: number;

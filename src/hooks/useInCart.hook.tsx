@@ -12,7 +12,7 @@ const inCartHandler = (
     return false;
   }
 
-  return !!cartArray.find((cart: Cart) => data.model === cart.name);
+  return !!cartArray.find((cart: Cart) => data.model === cart.model);
 };
 
 const likedHandler = (

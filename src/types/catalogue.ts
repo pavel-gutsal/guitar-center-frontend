@@ -21,7 +21,7 @@ export interface CatalogItem {
 
 export interface ShoppintCard {
   number: number;
-  name: string;
+  model: string;
   details: CatalogItem | undefined;
 }
 

@@ -48,7 +48,7 @@ export const ShoppingCart = () => {
     updateUserCartNumberIsError,
   } = useUpdateFullyUserCart(user, bearToken);
 
-  // const { checkout } = useCheckout();
+  const { checkout } = useCheckout();
 
   const normilizedList = useMemo<ShoppintCard[] | undefined>(() => {
     if (
@@ -63,7 +63,7 @@ export const ShoppingCart = () => {
     }
 
     return cartArray.map((cart) => {
-      const details = modelList.find((model) => model.model === cart.name);
+      const details = modelList.find((model) => model.model === cart.model);
       return { ...cart, details };
     });
   }, [bearToken, user, userCartExist, cartArray, modelList]);
@@ -91,7 +91,7 @@ export const ShoppingCart = () => {
     updateUserCartNumber(updatedCart);
 
     const updatedCartArray = cartArray.map((cart) =>
-      cart.name === updatedCart.name ? updatedCart : cart
+      cart.model === updatedCart.model ? updatedCart : cart
     );
 
     dispatch(
@@ -100,21 +100,23 @@ export const ShoppingCart = () => {
   };
 
   const increaseNumberHandler = (cart: ShoppintCard) => {
-    const updatedCart: Cart = { number: cart.number + 1, name: cart.name };
+    const updatedCart: Cart = { number: cart.number + 1, model: cart.model };
     updateCartNumber(updatedCart);
   };
 
   const decreaseNumberHandler = (cart: ShoppintCard) => {
     if (cart.number === 0) return;
-    const updatedCart: Cart = { number: cart.number - 1, name: cart.name };
+    const updatedCart: Cart = { number: cart.number - 1, model: cart.model };
 
     updateCartNumber(updatedCart);
   };
 
-  // const checkoutHandler = () => {
-
-  //   checkout();
-  // };
+  // make check for 0 values
+  const checkoutHandler = () => {
+    if (cartArray && cartArray.length > 0) {
+      checkout(cartArray);
+    }
+  };
 
   return (
     <SShoppingCart>
@@ -144,7 +146,11 @@ export const ShoppingCart = () => {
                 })}
             </SCardContainer>
             {((normilizedList && normilizedList.length > 0) || fadeOut) && (
-              <Checkout normilizedList={normilizedList} fadeOut={fadeOut} />
+              <Checkout
+                normilizedList={normilizedList}
+                fadeOut={fadeOut}
+                checkoutHandler={checkoutHandler}
+              />
             )}
           </SWrapper>
           {!fadeOut && cartArray?.length === 0 && <EmptyCart />}

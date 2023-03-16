@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { isNil } from 'lodash';
-import { toast } from 'react-toastify';
 import { get, patch } from '../api/common';
 import { useAppDispatch } from '../app/hooks';
 import { PATH } from '../constants';

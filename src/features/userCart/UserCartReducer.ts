@@ -39,16 +39,16 @@ export const userCartSlice = createSlice({
     },
     toggleInCart: (state, action) => {
       if (!state.cartArray || typeof action.payload !== 'string') return;
-      const inCart = state.cartArray.find((el) => el.name === action.payload);
+      const inCart = state.cartArray.find((el) => el.model === action.payload);
 
       if (inCart) {
         state.cartArray = state.cartArray.filter(
-          (el) => el.name !== (action.payload as string)
+          (el) => el.model !== (action.payload as string)
         );
       } else {
         state.cartArray = [
           ...state.cartArray,
-          { name: action.payload, number: 1 },
+          { model: action.payload, number: 1 },
         ];
       }
     },

@@ -14,7 +14,11 @@ export const useCheckout = () => {
     isLoading,
     isError,
     error,
-  } = useMutation((data: Cart) => post(path, data, bearToken), {});
+  } = useMutation((data: Cart[]) => post(path, { list: data }, bearToken), {
+    onSuccess: (response: any) => {
+      console.log(response.url);
+    },
+  });
 
   return { checkout };
 };
