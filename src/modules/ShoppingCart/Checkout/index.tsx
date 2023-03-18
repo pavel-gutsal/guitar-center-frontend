@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material';
 import { isNil } from 'lodash';
 import { ShoppintCard } from '../../../types';
 import {
@@ -24,13 +25,15 @@ const calculateTotalPrice = (normilizedList: ShoppintCard[] | undefined) => {
 interface Props {
   normilizedList: ShoppintCard[] | undefined;
   fadeOut: boolean;
-  setCheckoutModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  openCheckoutModalHanler: () => void;
+  loading: boolean;
 }
 
 export const Checkout = ({
   normilizedList,
   fadeOut,
-  setCheckoutModalOpen,
+  openCheckoutModalHanler,
+  loading,
 }: Props) => {
   return (
     <SCheckout fadeOut={fadeOut}>
@@ -52,8 +55,8 @@ export const Checkout = ({
           <span>{`${calculateTotalPrice(normilizedList)} $`}</span>
         </STotalPrice>
       </SProductPrice>
-      <SProceedButton onClick={() => setCheckoutModalOpen(true)}>
-        Proceed
+      <SProceedButton onClick={openCheckoutModalHanler} disabled={loading}>
+        {loading ? <CircularProgress color="inherit" size={24} /> : 'Proceed'}
       </SProceedButton>
     </SCheckout>
   );

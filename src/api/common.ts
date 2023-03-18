@@ -47,3 +47,12 @@ export const patch = async <T>(path: string, body: T, token: string | null) => {
   });
   return data;
 };
+
+export const remove = async <T>(path: string, token: string | null) => {
+  const { data } = await axiosInstance.delete<T>(path, {
+    headers: {
+      Authorization: `${token}`,
+    },
+  });
+  return data;
+};

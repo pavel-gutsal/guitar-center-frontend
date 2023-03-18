@@ -98,12 +98,12 @@ export const STotalPrice = styled.p`
 export const SProceedButton = styled.button`
   background: ${colors.brightOrange};
   color: white;
-  padding: 15px 0;
+  height: 46px;
   outline: none;
   border-radius: 7px;
   font-size: 16px;
   border: 1px solid ${colors.brightOrange};
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   cursor: pointer;
 
   &:hover,
@@ -113,7 +113,7 @@ export const SProceedButton = styled.button`
   }
 
   @media screen and ${devices.tabletS} {
-    padding: 12px 0;
+    height: 42px;
     font-size: 14px;
   }
 `;

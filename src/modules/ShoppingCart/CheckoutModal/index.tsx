@@ -1,9 +1,8 @@
+import { useState, useEffect, useMemo } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 import { isNil } from 'lodash';
-import { useState, useEffect } from 'react';
 import { CloseButton } from '../../../assets/SVG/CloseButton';
-import { useStripe } from '../hooks/useStripe.hook';
 import { StripePayment } from '../StripePayment';
 import {
   SWrapper,
@@ -12,62 +11,98 @@ import {
   SHeader,
   SHeaderTitle,
   SContent,
+  SPayment,
+  STotalPrice,
+  SText,
+  STextPrice,
 } from './CheckoutModal.style';
+import { PaymentConfig, ShoppintCard } from '../../../types';
+import { useStripeConfig } from '../../../hooks/useStripeConfig.hook';
+import { OrderDescription } from './OrderDescription';
 
 interface Props {
   setCheckoutModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  stripeConfig: PaymentConfig;
+  normilizedList: ShoppintCard[];
 }
 
-export const CheckoutModal = ({ setCheckoutModalOpen }: Props) => {
+export const CheckoutModal = ({
+  setCheckoutModalOpen,
+  stripeConfig,
+  normilizedList,
+}: Props) => {
   const [fadeOut, setFadeOut] = useState(false);
+  const { cancelPayment, cancelLoading } = useStripeConfig();
 
-  const closeModalHandle = () => {
+  const totalPrice = useMemo(() => {
+    return normilizedList.reduce((prev, curr) => {
+      return curr.number * (curr.details?.discountedPrice || 0) + prev;
+    }, 0);
+  }, [normilizedList]);
+
+  const closeModalHandler = () => {
     setFadeOut(true);
+    document.body.style.overflowY = 'auto';
     setTimeout(() => {
       setCheckoutModalOpen(false);
       setFadeOut(false);
     }, 400);
   };
 
-  const [stripePromise, setStripePromise] = useState<Stripe | null>(null);
-  const [clientSecret, setClientSecret] = useState<string>('');
-  const { fetchPaymentIntent } = useStripe();
+  const cancelPaymentIntent = async () => {
+    if (!isNil(stripeConfig?.paymentID)) {
+      await cancelPayment(stripeConfig.paymentID);
+    }
+  };
 
-  const createPaymentInstance = async () => {
-    const response = await fetchPaymentIntent();
+  const cancelCloseModalHandler = async () => {
+    await cancelPaymentIntent();
+    closeModalHandler();
+  };
 
-    if (
-      isNil(response) ||
-      isNil(response?.clientSecret) ||
-      isNil(response?.publishableKey)
-    )
-      return;
+  const [stripePromise, setStripePromise] = useState<Stripe | null | undefined>(
+    null
+  );
+  const [clientSecret] = useState<string | undefined>(
+    stripeConfig.clientSecret
+  );
 
-    setStripePromise(await loadStripe(response.publishableKey));
-
-    setClientSecret(response.clientSecret);
+  const asyncAwaitFoo = async () => {
+    if (isNil(stripeConfig) || isNil(stripeConfig.publishableKey)) return;
+    const response = await loadStripe(stripeConfig.publishableKey);
+    if (!isNil(response)) setStripePromise(response);
   };
 
   useEffect(() => {
-    createPaymentInstance();
+    asyncAwaitFoo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log('rerender');
 
   return (
     <SWrapper>
-      <SBackground onClick={closeModalHandle} fadeOut={fadeOut} />
+      <SBackground onClick={cancelCloseModalHandler} fadeOut={fadeOut} />
       <SCheckoutModal fadeOut={fadeOut}>
         <SHeader>
           <SHeaderTitle>payment form</SHeaderTitle>
-          <CloseButton onClick={closeModalHandle} />
+          <CloseButton onClick={cancelCloseModalHandler} />
         </SHeader>
         <SContent>
-          {clientSecret && stripePromise && (
-            <Elements stripe={stripePromise} options={{ clientSecret }}>
-              <StripePayment />
-            </Elements>
-          )}
+          <OrderDescription normilizedList={normilizedList} />
+          <SPayment>
+            {clientSecret && stripePromise && (
+              <Elements stripe={stripePromise} options={{ clientSecret }}>
+                <StripePayment
+                  closeModalHandler={closeModalHandler}
+                  cancelCloseModalHandler={cancelCloseModalHandler}
+                  cancelLoading={cancelLoading}
+                />
+              </Elements>
+            )}
+            <STotalPrice>
+              <SText>Total Price</SText>
+              <STextPrice>{`${totalPrice} $`}</STextPrice>
+            </STotalPrice>
+          </SPayment>
         </SContent>
       </SCheckoutModal>
     </SWrapper>

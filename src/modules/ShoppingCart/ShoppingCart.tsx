@@ -1,10 +1,17 @@
 import { useState, useMemo } from 'react';
 import { isNil } from 'lodash';
 import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { SBlockContainer } from '../../pages/BlockContent/BlockContent.styles';
 import { useGetCatalogByModel } from '../../services/catalogue.service';
-import { Cart, Category, ModifyOption, ShoppintCard } from '../../types';
+import {
+  Cart,
+  Category,
+  ModifyOption,
+  PaymentConfig,
+  ShoppintCard,
+} from '../../types';
 import { SBlock } from '../Block/Block.styles';
 import { BlockHead } from '../Block/BlockHead';
 import { Card } from './Card';
@@ -19,11 +26,14 @@ import {
   toggleInCart,
 } from '../../features/userCart/UserCartReducer';
 import { EmptyCart } from './EmptyCart';
-import { useCheckout } from '../../services/checkout.service';
 import { CheckoutModal } from './CheckoutModal';
+import { useStripeConfig } from '../../hooks/useStripeConfig.hook';
 
 export const ShoppingCart = () => {
   const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const [stripeConfig, setStripeConfig] = useState<
+    PaymentConfig | null | undefined
+  >(null);
   const [fadeOut, setFadeOut] = useState(false);
   const dispatch = useAppDispatch();
   const location = useLocation();
@@ -34,23 +44,19 @@ export const ShoppingCart = () => {
     (state) => state.userCart
   );
 
-  const { modelList, isLoading, isError, error } = useGetCatalogByModel({
+  const { modelList } = useGetCatalogByModel({
     category: Category.cart,
     user,
     bearToken,
     list: cartArray,
   });
 
-  const { updateUserCart, updateUserCartLoading, updateUserCartIsError } =
-    useUpdateUserCart(user, bearToken);
+  const { updateUserCart } = useUpdateUserCart(user, bearToken);
 
-  const {
-    updateUserCartNumber,
-    updateUserCartNumberLoading,
-    updateUserCartNumberIsError,
-  } = useUpdateFullyUserCart(user, bearToken);
+  const { updateUserCartNumber } = useUpdateFullyUserCart(user, bearToken);
 
-  const { checkout } = useCheckout();
+  const { fetchPaymentIntent, loading: loadingStripeConfig } =
+    useStripeConfig();
 
   const normilizedList = useMemo<ShoppintCard[] | undefined>(() => {
     if (
@@ -81,7 +87,7 @@ export const ShoppingCart = () => {
       setTimeout(() => {
         deleteCard(model);
         setFadeOut(false);
-      }, 300);
+      }, 400);
     } else {
       deleteCard(model);
     }
@@ -111,6 +117,26 @@ export const ShoppingCart = () => {
     const updatedCart: Cart = { number: cart.number - 1, model: cart.model };
 
     updateCartNumber(updatedCart);
+  };
+
+  const openCheckoutModalHanler = async () => {
+    const response = await fetchPaymentIntent();
+
+    if (
+      isNil(response) ||
+      isNil(response?.clientSecret) ||
+      isNil(response?.publishableKey) ||
+      isNil(response?.paymentID)
+    ) {
+      toast.error(`Failed to proccess order!`, {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: 'dark',
+      });
+    } else {
+      setCheckoutModalOpen(true);
+      setStripeConfig(response);
+      document.body.style.overflowY = 'hidden';
+    }
   };
 
   return (
@@ -144,15 +170,23 @@ export const ShoppingCart = () => {
               <Checkout
                 normilizedList={normilizedList}
                 fadeOut={fadeOut}
-                setCheckoutModalOpen={setCheckoutModalOpen}
+                openCheckoutModalHanler={openCheckoutModalHanler}
+                loading={loadingStripeConfig}
               />
             )}
           </SWrapper>
           {!fadeOut && cartArray?.length === 0 && <EmptyCart />}
         </SBlock>
-        {checkoutModalOpen && (
-          <CheckoutModal setCheckoutModalOpen={setCheckoutModalOpen} />
-        )}
+        {checkoutModalOpen &&
+          stripeConfig &&
+          normilizedList &&
+          normilizedList.length > 0 && (
+            <CheckoutModal
+              setCheckoutModalOpen={setCheckoutModalOpen}
+              stripeConfig={stripeConfig}
+              normilizedList={normilizedList}
+            />
+          )}
       </SBlockContainer>
     </SShoppingCart>
   );

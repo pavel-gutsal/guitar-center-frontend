@@ -1,3 +1,4 @@
+import CircularProgress from '@mui/material/CircularProgress';
 import {
   PaymentElement,
   useStripe,
@@ -5,67 +6,106 @@ import {
 } from '@stripe/react-stripe-js';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useAppDispatch } from '../../../app/hooks';
+import { resetCart } from '../../../features/userCart/UserCartReducer';
+import { useResetUserCart } from '../../../services/userCart.service';
 import './Stripe.style.css';
-import { SForm, SButton } from './StripePayment.style';
+import {
+  SForm,
+  SButton,
+  SGroupHorizontal,
+  SButtonCancel,
+} from './StripePayment.style';
 
-export const StripePayment = () => {
+interface Props {
+  closeModalHandler: () => void;
+  cancelCloseModalHandler: () => Promise<void>;
+  cancelLoading: boolean;
+}
+
+export const StripePayment = ({
+  closeModalHandler,
+  cancelCloseModalHandler,
+  cancelLoading,
+}: Props) => {
+  const dispatch = useAppDispatch();
   const stripe = useStripe();
   const elements = useElements();
+  const { resetCartMutation } = useResetUserCart();
 
-  const [message, setMessage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
 
-    if (!stripe || !elements) {
-      // Stripe.js has not yet loaded.
-      // Make sure to disable form submission until Stripe.js has loaded.
-      return;
-    }
-    setIsProcessing(true);
+    try {
+      if (!stripe || !elements) {
+        return;
+      }
+      setIsProcessing(true);
 
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: `http://localhost:5173/cart`,
-      },
-    });
+      const confirmPayment = await stripe.confirmPayment({
+        elements,
+        confirmParams: {},
+        redirect: 'if_required',
+      });
 
-    if (error) {
-      toast.error('payment failed', {
-        position: toast.POSITION.TOP_RIGHT,
+      const { paymentIntent, error } = confirmPayment;
+
+      if (paymentIntent && paymentIntent?.status === 'succeeded') {
+        toast.success(`Payment successful !`, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          theme: 'dark',
+        });
+        setIsProcessing(false);
+        closeModalHandler();
+
+        resetCartMutation();
+        dispatch(resetCart());
+      }
+
+      if (error) {
+        throw new Error(error?.message || 'payment unsuccesful');
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error(`Payment failed!`, {
+        position: toast.POSITION.BOTTOM_RIGHT,
         theme: 'dark',
       });
+      setIsProcessing(false);
     }
-
-    if (error.type === 'card_error' || error.type === 'validation_error') {
-      setMessage(error.message);
-    } else {
-      setMessage('An unexpected error occured.');
-    }
-
-    toast.success('payment proccessed successfully', {
-      position: toast.POSITION.TOP_RIGHT,
-      theme: 'dark',
-    });
-    setIsProcessing(false);
   };
 
   return (
     <SForm id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
-      <SButton
-        type="submit"
-        disabled={isProcessing || !stripe || !elements}
-        id="submit"
-      >
-        <span id="button-text">
-          {isProcessing ? 'Processing ... ' : 'Pay now'}
-        </span>
-      </SButton>
-      {/* Show any error or success messages */}
-      {message && <div id="payment-message">{message}</div>}
+      <SGroupHorizontal>
+        <SButton
+          type="submit"
+          disabled={isProcessing || !stripe || !elements}
+          id="submit"
+        >
+          <span id="button-text">
+            {isProcessing ? (
+              <CircularProgress color="inherit" size={24} />
+            ) : (
+              'Pay now'
+            )}
+          </span>
+        </SButton>
+        <SButtonCancel
+          type="button"
+          disabled={cancelLoading}
+          onClick={cancelCloseModalHandler}
+        >
+          {cancelLoading ? (
+            <CircularProgress color="inherit" size={24} />
+          ) : (
+            'Cancel'
+          )}
+        </SButtonCancel>
+      </SGroupHorizontal>
     </SForm>
   );
 };

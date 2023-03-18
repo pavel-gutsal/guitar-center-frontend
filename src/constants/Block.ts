@@ -5,11 +5,13 @@ export const PATH = {
   LOGIN: 'auth/signin',
   VALIDATE: 'auth/validate',
   USERCART: 'usercart',
+  USERCART_RESET: 'usercart/reset',
   LIKED: 'usercart/liked',
   SHOP_CART: 'usercart/shop-cart',
   CREATE_NEW_CART: 'usercart/create-new',
   UPDATE_CART_NUMBER: 'usercart/cart',
-  CHECKOUT: 'stripe/payment-intent',
+  CHECKOUT_CREATE_INTENT: 'stripe/payment-intent',
+  CHECKOUT_CANCEL_INTENT: 'stripe/payment-cancel',
 };
 
 export enum ROUTES {

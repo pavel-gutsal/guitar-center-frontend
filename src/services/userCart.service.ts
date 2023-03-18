@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { isNil } from 'lodash';
-import { get, patch } from '../api/common';
-import { useAppDispatch } from '../app/hooks';
+import { get, patch, remove } from '../api/common';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { PATH } from '../constants';
 import { modifyCart } from '../features/userCart/UserCartReducer';
 import { Cart, ModifyOption, UserCart } from '../types';
@@ -132,4 +132,17 @@ export const useUpdateFullyUserCart = (
     updateUserCartNumberIsError,
     error,
   };
+};
+
+export const useResetUserCart = () => {
+  const { bearToken } = useAppSelector((state) => state.auth);
+
+  const {
+    mutate: resetCartMutation,
+    isLoading,
+    error,
+    isError,
+  } = useMutation(() => remove<UserCart>(PATH.USERCART_RESET, bearToken));
+
+  return { resetCartMutation, isLoading, error, isError };
 };

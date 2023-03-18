@@ -52,6 +52,9 @@ export const userCartSlice = createSlice({
         ];
       }
     },
+    resetCart: (state) => {
+      state.cartArray = [];
+    },
     logoutCart: (state) => {
       state.userCartExist = false;
       state.cartArray = null;
@@ -60,7 +63,7 @@ export const userCartSlice = createSlice({
   },
 });
 
-export const { modifyCart, logoutCart, toggleLike, toggleInCart } =
+export const { modifyCart, logoutCart, toggleLike, toggleInCart, resetCart } =
   userCartSlice.actions;
 
 export default userCartSlice.reducer;

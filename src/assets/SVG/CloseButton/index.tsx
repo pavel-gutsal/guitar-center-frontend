@@ -1,7 +1,7 @@
 import './CloseButton.styles.css';
 
 interface Props {
-  onClick: () => void;
+  onClick: () => void | Promise<void>;
 }
 
 export const CloseButton = ({ onClick }: Props) => {
