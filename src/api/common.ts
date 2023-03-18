@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { isNil } from 'lodash';
 
-export const baseUrl = 'https://web-shop-backend.onrender.com';
+export const baseUrl = 'https://guitar-center.onrender.com';
 
 // export const baseUrl = 'http://localhost:3000/';
 
