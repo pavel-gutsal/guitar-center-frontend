@@ -9,7 +9,7 @@ export const PATH = {
   SHOP_CART: 'usercart/shop-cart',
   CREATE_NEW_CART: 'usercart/create-new',
   UPDATE_CART_NUMBER: 'usercart/cart',
-  CHECKOUT: 'stripe',
+  CHECKOUT: 'stripe/payment-intent',
 };
 
 export enum ROUTES {

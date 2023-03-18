@@ -20,8 +20,10 @@ import {
 } from '../../features/userCart/UserCartReducer';
 import { EmptyCart } from './EmptyCart';
 import { useCheckout } from '../../services/checkout.service';
+import { CheckoutModal } from './CheckoutModal';
 
 export const ShoppingCart = () => {
+  const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const dispatch = useAppDispatch();
   const location = useLocation();
@@ -111,13 +113,6 @@ export const ShoppingCart = () => {
     updateCartNumber(updatedCart);
   };
 
-  // make check for 0 values
-  const checkoutHandler = () => {
-    if (cartArray && cartArray.length > 0) {
-      checkout(cartArray);
-    }
-  };
-
   return (
     <SShoppingCart>
       <SBlockContainer>
@@ -149,12 +144,15 @@ export const ShoppingCart = () => {
               <Checkout
                 normilizedList={normilizedList}
                 fadeOut={fadeOut}
-                checkoutHandler={checkoutHandler}
+                setCheckoutModalOpen={setCheckoutModalOpen}
               />
             )}
           </SWrapper>
           {!fadeOut && cartArray?.length === 0 && <EmptyCart />}
         </SBlock>
+        {checkoutModalOpen && (
+          <CheckoutModal setCheckoutModalOpen={setCheckoutModalOpen} />
+        )}
       </SBlockContainer>
     </SShoppingCart>
   );

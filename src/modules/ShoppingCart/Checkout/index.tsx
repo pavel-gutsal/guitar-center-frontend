@@ -24,13 +24,13 @@ const calculateTotalPrice = (normilizedList: ShoppintCard[] | undefined) => {
 interface Props {
   normilizedList: ShoppintCard[] | undefined;
   fadeOut: boolean;
-  checkoutHandler: () => void;
+  setCheckoutModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Checkout = ({
   normilizedList,
   fadeOut,
-  checkoutHandler,
+  setCheckoutModalOpen,
 }: Props) => {
   return (
     <SCheckout fadeOut={fadeOut}>
@@ -52,7 +52,9 @@ export const Checkout = ({
           <span>{`${calculateTotalPrice(normilizedList)} $`}</span>
         </STotalPrice>
       </SProductPrice>
-      <SProceedButton onClick={checkoutHandler}>Proceed</SProceedButton>
+      <SProceedButton onClick={() => setCheckoutModalOpen(true)}>
+        Proceed
+      </SProceedButton>
     </SCheckout>
   );
 };
