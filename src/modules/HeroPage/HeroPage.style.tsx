@@ -22,7 +22,7 @@ export const SHeroPage = styled.div`
   overflow: hidden;
 `;
 
-export const SBubblesContainer = styled.div<SBubblesProps>`
+export const SBubblesContainer = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
