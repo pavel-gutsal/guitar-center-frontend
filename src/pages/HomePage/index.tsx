@@ -1,5 +1,10 @@
-import { SBlockContainer } from '../BlockContent/BlockContent.styles';
+import { HeroPage } from '../../modules/HeroPage';
+import { SHomePage } from './HomePage.style';
 
 export const HomePage = () => {
-  return <SBlockContainer>Home</SBlockContainer>;
+  return (
+    <SHomePage>
+      <HeroPage />
+    </SHomePage>
+  );
 };

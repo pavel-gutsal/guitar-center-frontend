@@ -18,4 +18,9 @@ export const colors = {
   successGreen: '#43b02a',
   creditButton: '#3e77aa',
   creditButtonHighlight: '#4e98d9',
+  // landingpage
+  darkBuble: '#439eff',
+  darkBubleTransparent: 'rgba(23, 135, 255, 0.3)',
+  lightBuble: '#ffa73c',
+  lightBubleTransparent: 'rgba(255, 167, 60, 0.3)',
 };

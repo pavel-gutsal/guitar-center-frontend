@@ -53,6 +53,13 @@ import LaptopLeft from './modalCrown/laptopLeft.png';
 import LaptopRight from './modalCrown/laptopRight.png';
 import EmptyList from './empty-notFound/empty-list.png';
 import EmptyCart from './empty-notFound/empty-cart.png';
+import Blob from './SVG/Blob/blob.svg';
+import LandingPageHP from './images/LandingPageSlider/HP.png';
+import LandingPageMSI from './images/LandingPageSlider/MSI.png';
+import LandingPageMSI2 from './images/LandingPageSlider/MSI2.png';
+import LandingPageOMEN from './images/LandingPageSlider/OMEN.png';
+import LandingPageTHINKPAD from './images/LandingPageSlider/ThinkPad.png';
+import ArrowDown from './SVG/ArrowDown/ArrowDown.svg';
 
 export const IMAGES = {
   APPINFRAMESMALL: AppInFrameSmall,
@@ -124,4 +131,15 @@ export const IMAGES = {
     EMPTY_LIST: EmptyList,
     EMPTY_CART: EmptyCart,
   },
+  ANIMATED: {
+    BLOB: Blob,
+  },
+  LANDINGPAGE_SLIDER: {
+    HP: LandingPageHP,
+    MSI: LandingPageMSI,
+    MSI2: LandingPageMSI2,
+    OMEN: LandingPageOMEN,
+    THINKPAD: LandingPageTHINKPAD,
+  },
+  ARROWDOWN: ArrowDown,
 };
