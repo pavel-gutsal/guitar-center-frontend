@@ -1,15 +1,19 @@
 import styled from 'styled-components';
-import { devices } from '../../../Theme';
+import { devices } from '../../../../Theme';
 
 export const SExplore = styled.div`
   position: absolute;
-  bottom: 10%;
+  bottom: calc(10% + 250px);
   left: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  @media screen and ${devices.default} {
+    bottom: calc(10% + 150px);
+  }
 
   @media screen and ${devices.netbook} {
     display: none;

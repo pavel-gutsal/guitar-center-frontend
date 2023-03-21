@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled, { keyframes } from 'styled-components';
-import { devices } from '../../../Theme';
+import { devices } from '../../../../Theme';
 
 const moveUpAndDown = keyframes`
   0% {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices } from '../../../Theme';
+import { devices } from '../../../../Theme';
 
 export const STextContainer = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const STextContainer = styled.div`
 
   @media screen and ${devices.netbook} {
     top: inherit;
-    bottom: 20%;
+    bottom: calc(20% + 50px);
   }
 
   @media screen and ${devices.tabletS} {

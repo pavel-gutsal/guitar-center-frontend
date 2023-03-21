@@ -1,4 +1,4 @@
-import { IMAGES } from '../../../assets';
+import { IMAGES } from '../../../../assets';
 import { SBlob, SSliderBlob, SWrapper } from './SliderBlob.style';
 
 export const SliderBlob = () => {

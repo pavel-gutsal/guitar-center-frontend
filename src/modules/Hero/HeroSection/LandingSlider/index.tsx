@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { IMAGES } from '../../../assets';
+import { IMAGES } from '../../../../assets';
 import { SliderBlob } from '../SliderBlob';
 import {
   SLandingSlider,

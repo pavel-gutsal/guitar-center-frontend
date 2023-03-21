@@ -1,4 +1,4 @@
-import { IMAGES } from '../../../assets';
+import { IMAGES } from '../../../../assets';
 import { SExplore, SText, SButton, SArrowDown } from './Explore.style';
 
 export const Explore = () => {

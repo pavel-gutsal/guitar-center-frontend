@@ -1,0 +1,71 @@
+.Typewriter__wrapper--black {
+  font-size: 60px;
+  font-weight: 600;
+  color: rgb(39, 39, 39);
+}
+
+.Typewriter__cursor--black {
+  font-size: 60px;
+  font-weight: 600;
+  color: rgb(39, 39, 39);
+}
+
+@media screen and (max-width: 1600px) {
+  .Typewriter__wrapper--black {
+    font-size: 46px;
+  }
+  
+  .Typewriter__cursor {
+    font-size: 46px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .Typewriter__wrapper--black {
+    font-size: 42px;
+  }
+  
+  .Typewriter__cursor {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .Typewriter__wrapper--black {
+    font-size: 36px;
+  }
+  
+  .Typewriter__cursor {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .Typewriter__wrapper--black {
+    font-size: 36px;
+  }
+  
+  .Typewriter__cursor {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .Typewriter__wrapper--black {
+    font-size: 32px;
+  }
+  
+  .Typewriter__cursor {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .Typewriter__wrapper--black {
+    font-size: 28px;
+  }
+  
+  .Typewriter__cursor {
+    font-size: 28px;
+  }
+}

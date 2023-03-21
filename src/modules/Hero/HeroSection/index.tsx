@@ -1,5 +1,5 @@
 import { Explore } from './Explore';
-import { SBubble, SBubblesContainer, SHeroPage } from './HeroPage.style';
+import { SBubble, SBubblesContainer, SHeroSection } from './HeroSection.style';
 import { LandingSlider } from './LandingSlider';
 import { LandingText } from './LandingText';
 
@@ -7,9 +7,9 @@ const bubbles = new Array(20)
   .fill(20)
   .map((speed) => Math.floor(Math.random() * speed) + 10);
 
-export const HeroPage = () => {
+export const HeroSection = () => {
   return (
-    <SHeroPage>
+    <SHeroSection>
       <SBubblesContainer>
         {bubbles.map((speed, index) => (
           <SBubble speed={speed} key={index} />
@@ -18,6 +18,6 @@ export const HeroPage = () => {
       <LandingText />
       <LandingSlider />
       <Explore />
-    </SHeroPage>
+    </SHeroSection>
   );
 };

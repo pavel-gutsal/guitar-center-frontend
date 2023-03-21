@@ -60,6 +60,16 @@ import LandingPageMSI2 from './images/LandingPageSlider/MSI2.png';
 import LandingPageOMEN from './images/LandingPageSlider/OMEN.png';
 import LandingPageTHINKPAD from './images/LandingPageSlider/ThinkPad.png';
 import ArrowDown from './SVG/ArrowDown/ArrowDown.svg';
+import LaptopCategory from './Category/laptop.png';
+import TabletCategory from './Category/tablet.png';
+import PhoneCategory from './Category/phone.png';
+import WhiteCurve from './images/WhiteCurve/Curve.svg';
+import BlobCategory from './SVG/Blob/BlobCategory.svg';
+import CartCategorySVG from './CategoryIcons/cart.svg';
+import HeartCategorySVG from './CategoryIcons/heart.svg';
+import LaptopCategorySVG from './CategoryIcons/laptop.svg';
+import TabletCategorySVG from './CategoryIcons/tablet.svg';
+import PhoneCategorySVG from './CategoryIcons/phone.svg';
 
 export const IMAGES = {
   APPINFRAMESMALL: AppInFrameSmall,
@@ -133,6 +143,7 @@ export const IMAGES = {
   },
   ANIMATED: {
     BLOB: Blob,
+    BLOBCATEGORY: BlobCategory,
   },
   LANDINGPAGE_SLIDER: {
     HP: LandingPageHP,
@@ -142,4 +153,19 @@ export const IMAGES = {
     THINKPAD: LandingPageTHINKPAD,
   },
   ARROWDOWN: ArrowDown,
+  CATEGORY: {
+    LAPTOP: LaptopCategory,
+    PHONE: PhoneCategory,
+    Tablet: TabletCategory,
+  },
+  WHITECURVE: {
+    WHITECURVE: WhiteCurve,
+  },
+  CATEGORY_SVG: {
+    CART: CartCategorySVG,
+    HEART: HeartCategorySVG,
+    LAPTOP: LaptopCategorySVG,
+    TABLET: TabletCategorySVG,
+    PHONE: PhoneCategorySVG,
+  },
 };

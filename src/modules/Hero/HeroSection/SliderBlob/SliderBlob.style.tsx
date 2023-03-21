@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices } from '../../../Theme';
+import { devices } from '../../../../Theme';
 
 export const SSliderBlob = styled.div`
   position: absolute;

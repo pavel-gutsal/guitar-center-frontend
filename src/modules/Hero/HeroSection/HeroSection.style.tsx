@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { colors, devices } from '../../Theme';
+import { colors, devices } from '../../../Theme';
 
 const BubleLarge = '30px';
 const BubleMedium = '25px';
@@ -15,11 +15,35 @@ const animate = keyframes`
   }
 `;
 
-export const SHeroPage = styled.div`
-  height: 100vh;
+export const SHeroSection = styled.div`
+  height: calc(100vh + 250px);
   background: linear-gradient(72deg, #05011c 0%, #040454 100%);
   position: relative;
   overflow: hidden;
+
+  @media screen and ${devices.default} {
+    height: calc(100vh + 200px);
+  }
+
+  @media screen and ${devices.netbook} {
+    height: calc(100vh + 150px);
+  }
+
+  @media screen and ${devices.tabletS} {
+    height: calc(100vh + 100px);
+  }
+
+  @media screen and (max-width: 670px) {
+    height: calc(100vh + 70px);
+  }
+
+  @media screen and ${devices.mobileL} {
+    height: calc(100vh + 50px);
+  }
+
+  @media screen and ${devices.mobileS} {
+    height: calc(100vh + 35px);
+  }
 `;
 
 export const SBubblesContainer = styled.div`
