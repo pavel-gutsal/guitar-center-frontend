@@ -11,8 +11,8 @@ deployed with github pages [DEMO LINK](https://pavel-gutsal.github.io/web-Shop-f
 
 ## frontend: 
   * `Redux Toolkit` --> state management
-  * `Tanstack/Query` --> server side state management
-  * `Styled components` --> css management 🙃
+  * `TanStack Query` --> server side state management
+  * `Styled Components` --> css management 🙃
   * `Matirial UI` --> ui library
   * `Formik and yup` --> form management
   * `Stripe` --> payment management
