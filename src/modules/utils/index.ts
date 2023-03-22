@@ -1,11 +1,10 @@
-import { SCROLL_ID } from '../../constants';
-
-export const scrollToRouterTab = (
+export const scrollToView = (
+  id: string,
   scrollIntoViewOptions?: ScrollIntoViewOptions
 ) => {
-  const routerBar = document.getElementById(SCROLL_ID.PRODUCT_TAB);
+  const domElement = document.getElementById(id);
 
-  if (routerBar) {
-    routerBar.scrollIntoView(scrollIntoViewOptions);
+  if (domElement) {
+    domElement.scrollIntoView(scrollIntoViewOptions);
   }
 };

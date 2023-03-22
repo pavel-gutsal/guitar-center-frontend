@@ -1,8 +1,8 @@
 import { useAppDispatch } from '../../../../../app/hooks';
 import { Comment } from '../../../../../assets/SVG/Comment';
-import { Tab } from '../../../../../constants';
+import { SCROLL_ID, Tab } from '../../../../../constants';
 import { changeTab } from '../../../../../features/Tab/TabReducer';
-import { scrollToRouterTab } from '../../../../utils';
+import { scrollToView } from '../../../../utils';
 import { IsAvailableLabel } from '../IsAvailableLabel';
 import { RatingLabel } from '../RatingLabel';
 import {
@@ -23,7 +23,7 @@ export const UpperBar = ({ rating, comments }: Props) => {
   const navigateToReview = () => {
     dispatch(changeTab(Tab.REVIEWS));
 
-    scrollToRouterTab();
+    scrollToView(SCROLL_ID.PRODUCT_TAB);
   };
 
   return (

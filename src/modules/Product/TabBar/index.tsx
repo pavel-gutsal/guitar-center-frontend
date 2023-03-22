@@ -1,7 +1,7 @@
 import { useAppDispatch } from '../../../app/hooks';
-import { Tab } from '../../../constants';
+import { SCROLL_ID, Tab } from '../../../constants';
 import { changeTab } from '../../../features/Tab/TabReducer';
-import { scrollToRouterTab } from '../../utils';
+import { scrollToView } from '../../utils';
 import { STabBar, SSegemented, SButton, SReviewTag } from './TabBar.styles';
 
 interface Props {
@@ -15,7 +15,7 @@ export const TabBar = ({ shadow, tab, reviewsCount }: Props) => {
 
   const toggleTab = (selectedTab: Tab) => {
     dispatch(changeTab(selectedTab));
-    scrollToRouterTab();
+    scrollToView(SCROLL_ID.PRODUCT_TAB);
   };
 
   return (

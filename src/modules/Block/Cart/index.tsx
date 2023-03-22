@@ -25,7 +25,8 @@ import { calculateDiscount, nameNormalize } from './utils';
 import { ModifiedCatalogItem } from '../../../types';
 import { ButtonBuy } from '../../../assets/SVG/ButtonBuy';
 import { CartButtonHeart } from '../../../assets/SVG/CartButtonHeart';
-import { scrollToRouterTab } from '../../utils';
+import { scrollToView } from '../../utils';
+import { SCROLL_ID } from '../../../constants';
 
 interface Props {
   product: ModifiedCatalogItem;
@@ -55,7 +56,10 @@ export const Cart = ({
   const navigate = useNavigate();
 
   const productNavigationHandler = () => {
-    scrollToRouterTab({ block: 'end', inline: 'nearest' });
+    scrollToView(SCROLL_ID.PRODUCT_TAB, {
+      block: 'end',
+      inline: 'nearest',
+    });
     navigate(`${model}`);
   };
 

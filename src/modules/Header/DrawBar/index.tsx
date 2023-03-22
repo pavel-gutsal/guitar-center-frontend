@@ -55,6 +55,18 @@ export const DrawBar = ({ drawBarOpen, setDrawBarOpen }: Props) => {
               sx={SLinkSX}
               endIcon={<ArrowForwardIosIcon />}
               onClick={() => {
+                navigateHandler(ROUTES.HOME);
+              }}
+            >
+              HOME
+            </Button>
+          </SListItem>
+          <SListItem>
+            <Button
+              variant="text"
+              sx={SLinkSX}
+              endIcon={<ArrowForwardIosIcon />}
+              onClick={() => {
                 navigateHandler(ROUTES.PHONES);
               }}
             >

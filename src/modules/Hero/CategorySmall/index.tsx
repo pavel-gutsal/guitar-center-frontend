@@ -1,3 +1,4 @@
+import { useInView } from 'react-intersection-observer';
 import TypeWriter from 'typewriter-effect';
 import {
   SCategorySmall,
@@ -9,10 +10,16 @@ import './CategoryText.style.css';
 import { HexagonMenu } from './HexagonMenu';
 
 export const CategorySmall = () => {
+  const { ref: textRef, inView: TextInView } = useInView({
+    threshold: 1,
+    delay: 300,
+    triggerOnce: true,
+  });
+
   return (
     <SCategorySmall>
       <SWrapper>
-        <SHorizontalGroup>
+        <SHorizontalGroup ref={textRef} animate={TextInView}>
           <SText>Looking for </SText>
           <TypeWriter
             options={{

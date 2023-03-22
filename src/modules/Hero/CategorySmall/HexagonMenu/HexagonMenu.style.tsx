@@ -1,6 +1,17 @@
 import styled, { keyframes } from 'styled-components';
 import { devices } from '../../../../Theme';
 
+const appearHexagon = keyframes`
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
 const animateBefore = keyframes`
   0% {
     transform: rotate(0deg);
@@ -80,7 +91,12 @@ export const SContent = styled.div`
   }
 `;
 
-export const SHexagon = styled.button`
+interface InViewProp {
+  inView: boolean;
+  delay: number;
+}
+
+export const SHexagon = styled.button<InViewProp>`
   position: relative;
   width: 150px;
   height: 188px;
@@ -93,6 +109,12 @@ export const SHexagon = styled.button`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  transform: scale(0.8);
+  opacity: 0;
+  animation-name: ${({ inView }) => inView && appearHexagon};
+  animation-duration: 0.2s;
+  animation-delay: ${({ delay }) => `${delay * 0.2}s`};
+  animation-fill-mode: forwards;
 
   &::before {
     content: '';

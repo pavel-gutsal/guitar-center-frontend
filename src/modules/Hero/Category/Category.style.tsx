@@ -1,11 +1,28 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { devices } from '../../../Theme';
 
-export const SCategory = styled.div`
+const categoryAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+interface CategoryProps {
+  inView: boolean;
+}
+
+export const SCategory = styled.div<CategoryProps>`
   position: relative;
   width: 100%;
   margin-top: -250px;
   height: calc(100vh - 250px);
+  opacity: 0;
+  animation-name: ${({ inView }) => inView && categoryAnimation};
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 
   @media screen and ${devices.default} {
     height: calc(100vh - 200px);

@@ -83,4 +83,5 @@ export const CartPerPage: SelectOptions = {
 
 export const SCROLL_ID = {
   PRODUCT_TAB: 'Router__Bar__Top_Global',
+  CATEGORY: 'CATEGORY__HOMEPAGE',
 };
