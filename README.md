@@ -1,15 +1,15 @@
+# eCommerce App fullStack
+
 deployed with github pages [DEMO LINK](https://pavel-gutsal.github.io/web-Shop-frontend/)
 
-eCommerce App fullStack
-
-backend:
+## backend:
   * nest.js framework
   * MongoDB and mongoose
   * class validator --> decorator based validation of clients requests
   * JsonWebToken --> user authentification
 
 
-frontend: 
+## frontend: 
   * Redux Toolkit --> state management
   * Tanstack/Query --> server side state management
   * Styled components --> css management 🙃
