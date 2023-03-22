@@ -1,12 +1,14 @@
 # eCommerce App fullStack
 
 deployed with github pages [DEMO LINK](https://pavel-gutsal.github.io/web-Shop-frontend/)
+node version: 18.x
 
 ## backend:
   * `nest.js` framework
   * `MongoDB` and `mongoose`
   * `class validator` --> decorator based validation of clients requests
   * `JsonWebToken` --> user authentification
+  * `OpenAPI(Swagger)` --> for documentating nest.js API
 
 
 ## frontend: 
